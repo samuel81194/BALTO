@@ -25,6 +25,37 @@
   window.addEventListener("resize", ajustarEscala);
 
   /* ---------- Navegación ---------- */
+  /* Selector segmentado: marca la opción y, si tiene [data-panel], muestra solo su panel */
+  function activarPestana(boton) {
+    Array.prototype.forEach.call(boton.parentNode.children, function (b) {
+      b.classList.toggle("activo", b === boton);
+      var panel = b.getAttribute("data-panel") && document.querySelector(b.getAttribute("data-panel"));
+      if (panel) panel.hidden = b !== boton;
+    });
+  }
+  if (window.location.hash) {
+    var pestana = document.querySelector('.selector > button[data-panel="' + window.location.hash.replace(/"/g, "") + '"]');
+    if (pestana) activarPestana(pestana);
+  }
+
+  /* Chip activo con botón para quitarlo; se inserta antes de las sugerencias */
+  function agregarChipQuitable(contenedor, texto) {
+    if (!contenedor || !texto) return;
+    var chip = document.createElement("span");
+    chip.className = "chip activo lavanda";
+    chip.innerHTML = '<i class="i" data-quitar=".chip" aria-label="Quitar">close</i>';
+    chip.appendChild(document.createTextNode(texto));
+    contenedor.insertBefore(chip, contenedor.querySelector("[data-sugerencia]"));
+  }
+  /* Campo que agrega un chip al presionar Enter */
+  document.addEventListener("keydown", function (e) {
+    var inp = e.target;
+    if (e.key !== "Enter" || !inp.matches || !inp.matches("[data-chip-en]")) return;
+    e.preventDefault();
+    agregarChipQuitable(document.querySelector(inp.getAttribute("data-chip-en")), inp.value.trim());
+    inp.value = "";
+  });
+
   function ir(destino) {
     if (!destino) return;
     window.location.href = destino;
@@ -71,7 +102,7 @@
     /* Selector segmentado: una opción activa */
     el = e.target.closest(".selector > button");
     if (el) {
-      Array.prototype.forEach.call(el.parentNode.children, function (b) { b.classList.toggle("activo", b === el); });
+      activarPestana(el);
       return;
     }
 
@@ -127,6 +158,10 @@
     }
 
     /* Chip "Agregar": pide un texto y crea un chip activo nuevo */
+    /* Chip sugerido: al tocarlo se agrega como chip quitable */
+    el = e.target.closest("[data-sugerencia]");
+    if (el) { agregarChipQuitable(el.parentNode, el.getAttribute("data-sugerencia")); el.remove(); return; }
+
     el = e.target.closest("[data-agregar-chip]");
     if (el) {
       var texto = window.prompt(el.getAttribute("data-agregar-chip") || "Agregar");
@@ -146,6 +181,14 @@
     el = e.target.closest("[data-grupo] > *");
     if (el) {
       Array.prototype.forEach.call(el.parentNode.children, function (c) { c.classList.toggle("activo", c === el); });
+      /* Filtro: el grupo indica la lista ([data-lista]) y cada chip su tipo ([data-filtro]) */
+      var lista = document.querySelector(el.parentNode.getAttribute("data-lista") || "#_");
+      if (lista) {
+        var tipo = el.getAttribute("data-filtro") || "*";
+        Array.prototype.forEach.call(lista.children, function (c) {
+          c.hidden = tipo !== "*" && (c.getAttribute("data-tipo") || "") !== tipo;
+        });
+      }
       return;
     }
 

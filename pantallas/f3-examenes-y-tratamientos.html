@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>F3 · Exámenes y tratamientos · Balto</title>
+<link rel="stylesheet" href="../css/balto.css">
+</head>
+<body>
+<div class="escenario"><div class="dispositivo">
+<main class="pantalla">
+  <div class="contenido">
+    <div class="encabezado">
+      <a class="boton-icono" href="f1-panel-de-salud.html" data-volver aria-label="Volver"><i class="i">arrow_back</i></a>
+      <h1 class="encabezado__titulo">Exámenes y tratamientos</h1>
+      <span class="espacio"></span>
+    </div>
+    <div class="carril" style="gap: 8px;" data-grupo data-lista="#lista-eventos">
+      <span class="chip activo" data-filtro="*">Todos</span>
+      <span class="chip" data-filtro="examen"><i class="i">labs</i>Exámenes</span>
+      <span class="chip" data-filtro="tratamiento"><i class="i">medication</i>Tratamientos</span>
+    </div>
+    <div class="eventos" id="lista-eventos">
+      <a class="evento" href="f7-detalle-de-examen.html" data-tipo="examen">
+        <span class="evento__icono oscuro"><i class="i">labs</i></span>
+        <span class="evento__textos"><span class="evento__titulo">Hemograma completo</span><span class="evento__sub">Resultados normales</span><span class="evento__meta"><span>18 AGO 2026</span><i class="i">attach_file</i><span>1 PDF</span></span></span>
+        <i class="i">chevron_right</i>
+      </a>
+      <a class="evento" href="g2-detalle-de-tratamiento.html" data-tipo="tratamiento">
+        <span class="evento__icono primario"><i class="i">medication</i></span>
+        <span class="evento__textos"><span class="evento__titulo">Amoxicilina 250 mg</span><span class="evento__sub">Tratamiento · 7 días</span><span class="evento__meta"><span>21 SEP 2026</span><i class="i">attach_file</i><span>1 fórmula</span></span></span>
+        <i class="i">chevron_right</i>
+      </a>
+      <a class="evento" href="g2-detalle-de-tratamiento.html" data-tipo="tratamiento">
+        <span class="evento__icono primario"><i class="i">medication</i></span>
+        <span class="evento__textos"><span class="evento__titulo">Champú medicado</span><span class="evento__sub">Tratamiento · 30 días</span><span class="evento__meta"><span>05 SEP 2026</span><i class="i">attach_file</i><span>1 fórmula</span></span></span>
+        <i class="i">chevron_right</i>
+      </a>
+      <a class="evento" href="f7-detalle-de-examen.html" data-tipo="examen">
+        <span class="evento__icono oscuro"><i class="i">labs</i></span>
+        <span class="evento__textos"><span class="evento__titulo">Coprológico</span><span class="evento__sub">Negativo</span><span class="evento__meta"><span>02 JUN 2026</span><i class="i">attach_file</i><span>1 PDF</span></span></span>
+        <i class="i">chevron_right</i>
+      </a>
+    </div>
+  </div>
+  <div class="barra-estado"><span class="hora">9:41</span><span class="indicadores"><i class="i">signal_cellular_alt</i><i class="i">wifi</i><i class="i">battery_full</i></span></div>
+</main>
+</div></div>
+<script src="../js/app.js"></script>
+</body>
+</html>

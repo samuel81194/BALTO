@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>F2 · Carnet de vacunas · Balto</title>
+<link rel="stylesheet" href="../css/balto.css">
+</head>
+<body>
+<div class="escenario"><div class="dispositivo">
+<main class="pantalla">
+  <div class="contenido">
+    <div class="encabezado">
+      <a class="boton-icono" href="f1-panel-de-salud.html" data-volver aria-label="Volver"><i class="i">arrow_back</i></a>
+      <h1 class="encabezado__titulo">Carnet de vacunas</h1>
+      <a class="boton-icono" href="l1-selector-de-contenido.html" aria-label="Compartir"><i class="i">ios_share</i></a>
+    </div>
+    <div class="selector">
+      <button type="button" class="activo" data-panel="#vacunas">Vacunas</button>
+      <button type="button" data-panel="#desparasitacion">Desparasitación</button>
+    </div>
+    <div class="eventos" id="vacunas">
+      <a class="evento flotante" href="d4-detalle-de-evento.html">
+        <span class="evento__icono"><i class="i">vaccines</i></span>
+        <span class="evento__textos"><span class="evento__titulo">Antirrábica</span><span class="evento__sub">Refuerzo: 12/09/2027</span><span class="evento__meta"><span>12 SEP 2026</span><i class="i">attach_file</i><span>1 soporte</span></span></span>
+        <i class="i">chevron_right</i>
+      </a>
+      <a class="evento flotante" href="d4-detalle-de-evento.html">
+        <span class="evento__icono"><i class="i">vaccines</i></span>
+        <span class="evento__textos"><span class="evento__titulo">Múltiple DHPPi+L</span><span class="evento__sub">Refuerzo: 03/03/2027</span><span class="evento__meta"><span>03 MAR 2026</span><i class="i">attach_file</i><span>1 soporte</span></span></span>
+        <i class="i">chevron_right</i>
+      </a>
+      <a class="evento flotante" href="d4-detalle-de-evento.html">
+        <span class="evento__icono"><i class="i">vaccines</i></span>
+        <span class="evento__textos"><span class="evento__titulo">Tos de las perreras</span><span class="evento__sub">Refuerzo: 10/01/2027</span><span class="evento__meta"><span>10 ENE 2026</span><i class="i">attach_file</i><span>Sin soporte</span></span></span>
+        <i class="i">chevron_right</i>
+      </a>
+    </div>
+    <div class="eventos" id="desparasitacion" hidden>
+      <a class="evento flotante" href="d4-detalle-de-evento.html">
+        <span class="evento__icono"><i class="i">pest_control</i></span>
+        <span class="evento__textos"><span class="evento__titulo">Desparasitación interna</span><span class="evento__sub">Próxima: 28/09/2026</span><span class="evento__meta"><span>28 JUN 2026</span><i class="i">attach_file</i><span>Sin soporte</span></span></span>
+        <i class="i">chevron_right</i>
+      </a>
+      <a class="evento flotante" href="d4-detalle-de-evento.html">
+        <span class="evento__icono"><i class="i">pest_control</i></span>
+        <span class="evento__textos"><span class="evento__titulo">Pipeta antipulgas</span><span class="evento__sub">Próxima: 21/10/2026</span><span class="evento__meta"><span>21 SEP 2026</span><i class="i">attach_file</i><span>Sin soporte</span></span></span>
+        <i class="i">chevron_right</i>
+      </a>
+    </div>
+    <a class="nota" href="j6-aviso-de-vacuna.html"><i class="i">event_upcoming</i><p>Próxima dosis: antirrábica · 25 sep (en 2 días)</p></a>
+  </div>
+  <div class="barra-accion sombra">
+    <a class="boton texto-f9" href="e2-registrar-vacuna.html">Agregar vacuna<i class="i">add</i></a>
+  </div>
+  <div class="barra-estado"><span class="hora">9:41</span><span class="indicadores"><i class="i">signal_cellular_alt</i><i class="i">wifi</i><i class="i">battery_full</i></span></div>
+</main>
+</div></div>
+<script src="../js/app.js"></script>
+</body>
+</html>

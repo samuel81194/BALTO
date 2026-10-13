@@ -47,6 +47,7 @@
 }
 
 /* ---------- Reset ---------- */
+[hidden] { display: none !important; }
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 html, body { height: 100%; }
 body {
@@ -797,3 +798,16 @@ p { overflow-wrap: break-word; }
 .grafica__barras > span.actual { background: var(--primario-900); }
 .campo__caja input.ejemplo-900::placeholder { color: var(--neutro-900); }
 [data-conmutar] { cursor: pointer; }
+.cifras.sin-borde > .cifra { border: 0; }
+.nav-inferior.tenue > a:not(.activo):not(.registrar) { color: rgba(255, 255, 255, 0.55); }
+
+/* Tarjeta destacada clara (detalle de examen) */
+.destacada.clara { gap: 12px; border-radius: 24px; background: var(--neutro-0); border: 1px solid var(--acento-100); }
+.destacada.clara .destacada__fila > span:last-child { color: var(--neutro-900); }
+.destacada.clara .destacada__fila > span:last-child > * { height: 24px; }
+/* Resumen con etiquetas grandes */
+.resumen.grande { padding: 20px; }
+.resumen.grande > div { align-items: center; }
+.resumen.grande > div > :first-child { font: 600 15px/22px var(--f-cuerpo); }
+.chip [data-quitar] { cursor: pointer; }
+[data-sugerencia] { cursor: pointer; }
