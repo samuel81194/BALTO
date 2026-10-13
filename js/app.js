@@ -84,6 +84,20 @@
       if (casilla) { alternarCasilla(casilla); return; }
     }
 
+    /* Fila con casilla: alterna selección */
+    el = e.target.closest("[data-marcar]");
+    if (el) {
+      var sel = !el.classList.contains("seleccionada");
+      el.classList.toggle("seleccionada", sel);
+      var m = el.querySelector(".marca");
+      if (m) m.textContent = sel ? "check_box" : "check_box_outline_blank";
+      return;
+    }
+
+    /* Quitar un elemento (archivo adjunto, etc.) */
+    el = e.target.closest("[data-quitar]");
+    if (el) { e.preventDefault(); var q = el.closest(el.getAttribute("data-quitar") || ".fila"); if (q) q.remove(); return; }
+
     el = e.target.closest(".casilla");
     if (el) { alternarCasilla(el); return; }
 
@@ -176,6 +190,14 @@
     };
     lector.readAsDataURL(inp.files[0]);
   });
+  /* Tras elegir un archivo, avanzar a la pantalla indicada (p. ej. "Leyendo el documento") */
+  document.addEventListener("change", function (e) {
+    var inp = e.target;
+    if (!inp.matches("input[type=file][data-ir-tras]") || !inp.files || !inp.files[0]) return;
+    var archivo = inp.files[0];
+    var valido = /^(image\/(jpeg|png)|application\/pdf)$/.test(archivo.type) && archivo.size <= 10 * 1024 * 1024;
+    ir(!valido && inp.getAttribute("data-error-archivo") ? inp.getAttribute("data-error-archivo") : inp.getAttribute("data-ir-tras"));
+  });
 
   /* Requisitos de contraseña en vivo */
   document.addEventListener("input", function (e) {
@@ -204,7 +226,9 @@
   /* ---------- Avance automático (splash, cargas, llamadas) ---------- */
   var auto = document.querySelector("[data-auto]");
   if (auto) {
-    setTimeout(function () { ir(auto.getAttribute("data-auto")); }, Number(auto.getAttribute("data-espera") || 2200));
+    var siguiente = new URLSearchParams(window.location.search).get("siguiente");
+    var destinoAuto = siguiente && /^[\w-]+\.html$/.test(siguiente) ? siguiente : auto.getAttribute("data-auto");
+    setTimeout(function () { ir(destinoAuto); }, Number(auto.getAttribute("data-espera") || 2200));
   }
 
   /* ---------- Gesto de deslizar (carrusel de bienvenida) ---------- */

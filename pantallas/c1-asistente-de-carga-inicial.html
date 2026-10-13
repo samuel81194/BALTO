@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>C1 · Asistente de carga inicial · Balto</title>
+<link rel="stylesheet" href="../css/balto.css">
+</head>
+<body>
+<div class="escenario"><div class="dispositivo">
+<main class="pantalla">
+  <div class="contenido" style="--gap: 14px;">
+    <div class="encabezado">
+      <span class="espacio"></span>
+      <h1 class="encabezado__titulo">Carga inicial</h1>
+      <span class="espacio"></span>
+    </div>
+    <div class="progreso">
+      <p class="progreso__texto">PASO 1 DE 2 · ¿QUÉ TIENES HOY?</p>
+      <div class="progreso__barras"><span class="hecho"></span><span></span></div>
+    </div>
+    <div style="display: flex; flex-direction: column; gap: 6px; overflow: hidden;">
+      <p class="t-t1 c-900">¿Qué información de Luna tienes a la mano?</p>
+      <p class="t-cuerpo c-500">Elige todo lo que aplique. Puedes subir más después.</p>
+    </div>
+    <div class="lista" id="opciones">
+      <div class="fila borde seleccionada" data-marcar data-destino="c2-subir-carnet-de-vacunacion.html">
+        <span class="fila__icono"><i class="i">badge</i></span>
+        <span class="fila__textos" style="gap: 2px;"><span class="fila__titulo">Carnet de vacunación</span><span class="fila__sub">Foto o escaneo</span></span>
+        <i class="i marca">check_box</i>
+      </div>
+      <div class="fila borde seleccionada" data-marcar data-destino="c3-subir-examen-o-laboratorio.html">
+        <span class="fila__icono"><i class="i">lab_profile</i></span>
+        <span class="fila__textos" style="gap: 2px;"><span class="fila__titulo">Exámenes o laboratorios</span><span class="fila__sub">PDF o foto</span></span>
+        <i class="i marca">check_box</i>
+      </div>
+      <div class="fila borde" data-marcar data-destino="c4-subir-formula-o-tratamiento.html">
+        <span class="fila__icono"><i class="i">receipt_long</i></span>
+        <span class="fila__textos" style="gap: 2px;"><span class="fila__titulo">Fórmulas o tratamientos activos</span><span class="fila__sub">Foto de la fórmula</span></span>
+        <i class="i marca">check_box_outline_blank</i>
+      </div>
+      <div class="fila borde" data-marcar data-destino="c5-transcribir-historial-de-chats.html">
+        <span class="fila__icono"><i class="i">chat</i></span>
+        <span class="fila__textos" style="gap: 2px;"><span class="fila__titulo">Historial en WhatsApp o correo</span><span class="fila__sub">Texto copiado</span></span>
+        <i class="i marca">check_box_outline_blank</i>
+      </div>
+      <div class="fila borde" data-marcar data-destino="c6-sin-historial-previo.html">
+        <span class="fila__icono"><i class="i">block</i></span>
+        <span class="fila__textos" style="gap: 2px;"><span class="fila__titulo">No tengo nada guardado</span><span class="fila__sub">Registro mínimo</span></span>
+        <i class="i marca">check_box_outline_blank</i>
+      </div>
+    </div>
+  </div>
+  <div class="barra-accion">
+    <a class="boton texto-f9" href="c2-subir-carnet-de-vacunacion.html" data-ir-opcion="opciones">Empezar carga<i class="i">arrow_forward</i></a>
+  </div>
+  <div class="barra-estado"><span class="hora">9:41</span><span class="indicadores"><i class="i">signal_cellular_alt</i><i class="i">wifi</i><i class="i">battery_full</i></span></div>
+</main>
+</div></div>
+<script src="../js/app.js"></script>
+</body>
+</html>
