@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Balto · Prototipo</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Outfit:wght@500;600&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20..48,400,0..1,0&display=block">
+<style>
+  :root {
+    --primario-900: #2e5955;
+    --primario-800: #2f5f5f;
+    --acento-100: #dce2e5;
+    --acento-300: #c7d0d5;
+    --neutro-900: #262626;
+    --neutro-500: #77737f;
+    --fondo: #f6f7f7;
+    --blanco: #ffffff;
+    --lavanda: #eeebfb;
+    --f-titulo: "Outfit", system-ui, sans-serif;
+    --f-cuerpo: "Plus Jakarta Sans", system-ui, sans-serif;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  [hidden] { display: none !important; }
+  html { scroll-behavior: smooth; }
+  body { background: var(--fondo); color: var(--neutro-900); font: 400 15px/22px var(--f-cuerpo); -webkit-font-smoothing: antialiased; }
+  a { color: inherit; text-decoration: none; }
+  .i { font-family: "Material Symbols Rounded"; font-weight: normal; font-style: normal; font-size: 20px; line-height: 1; letter-spacing: normal; text-transform: none; white-space: nowrap; direction: ltr; font-variation-settings: "FILL" 0, "GRAD" 0, "opsz" 24, "wght" 400; -webkit-font-feature-settings: "liga"; font-feature-settings: "liga"; }
+  .contenedor { width: 100%; max-width: 1160px; margin: 0 auto; padding: 0 24px; }
+
+  /* Portada */
+  .portada { background: var(--primario-900); color: var(--blanco); overflow: hidden; }
+  .portada .contenedor { display: grid; grid-template-columns: 1fr auto; align-items: center; gap: 32px; padding-top: 56px; padding-bottom: 56px; }
+  .marca { display: flex; align-items: center; gap: 10px; font: 600 22px/28px var(--f-titulo); color: var(--lavanda); margin-bottom: 20px; }
+  .marca img { width: 40px; height: 40px; }
+  .portada h1 { font: 600 44px/50px var(--f-titulo); letter-spacing: -0.8px; max-width: 620px; }
+  .portada p.lead { margin-top: 14px; max-width: 600px; color: rgba(255, 255, 255, 0.78); font-size: 16px; line-height: 25px; }
+  .datos { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 20px; }
+  .datos span { padding: 6px 12px; border-radius: 999px; background: rgba(255, 255, 255, 0.1); font: 600 13px/16px var(--f-cuerpo); color: var(--lavanda); }
+  .acciones { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 28px; }
+  .btn { display: inline-flex; align-items: center; gap: 10px; height: 52px; padding: 0 24px; border-radius: 26px; font: 700 16px/20px var(--f-cuerpo); background: var(--blanco); color: var(--primario-900); transition: transform .15s ease, background .15s ease; }
+  .btn:hover { transform: translateY(-1px); }
+  .btn.sec { background: transparent; color: var(--blanco); box-shadow: inset 0 0 0 1.5px rgba(255, 255, 255, 0.55); }
+  .btn.sec:hover { background: rgba(255, 255, 255, 0.08); }
+  .btn:focus-visible, .chip:focus-visible, .tarjeta:focus-visible { outline: 3px solid #9fd3c7; outline-offset: 2px; }
+  .vista { width: 240px; height: 519px; border-radius: 34px; overflow: hidden; border: 6px solid rgba(255, 255, 255, 0.12); box-shadow: 0 24px 60px rgba(0, 0, 0, 0.35); background: var(--primario-800); }
+  .vista img { display: block; width: 100%; height: 100%; object-fit: cover; }
+
+  /* Secciones */
+  section { padding-top: 40px; }
+  h2 { font: 600 24px/30px var(--f-titulo); letter-spacing: -0.2px; }
+  .sub { margin-top: 4px; color: var(--neutro-500); font-size: 14px; line-height: 20px; }
+  .recorrido { display: flex; flex-wrap: wrap; align-items: center; gap: 6px 4px; margin-top: 16px; }
+  .recorrido .i { color: var(--acento-300); font-size: 18px; }
+  .chip { display: inline-flex; align-items: center; gap: 6px; padding: 8px 14px; border-radius: 20px; background: var(--blanco); border: 1px solid var(--acento-100); font: 600 13px/16px var(--f-cuerpo); white-space: nowrap; transition: border-color .15s ease, background .15s ease; }
+  .chip b { color: var(--primario-900); font-weight: 700; }
+  .chip:hover { border-color: var(--primario-800); }
+  .accesos { display: grid; grid-template-columns: repeat(auto-fill, minmax(190px, 1fr)); gap: 10px; margin-top: 16px; }
+  .acceso { display: flex; align-items: center; gap: 12px; padding: 12px 14px; border-radius: 18px; background: var(--blanco); border: 1px solid var(--acento-100); transition: border-color .15s ease; }
+  .acceso:hover { border-color: var(--primario-800); }
+  .acceso > span:first-child { width: 40px; height: 40px; border-radius: 14px; flex-shrink: 0; display: flex; align-items: center; justify-content: center; background: var(--acento-100); color: var(--primario-900); }
+  .acceso strong { display: block; font: 600 14px/20px var(--f-cuerpo); }
+  .acceso small { display: block; color: var(--neutro-500); font-size: 12px; line-height: 16px; }
+
+  /* Índice y buscador */
+  .indice { position: sticky; top: 0; z-index: 5; margin-top: 40px; background: rgba(246, 247, 247, 0.92); backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px); border-bottom: 1px solid var(--acento-100); }
+  .indice .contenedor { display: flex; align-items: center; gap: 12px; padding-top: 12px; padding-bottom: 12px; }
+  .buscar { display: flex; align-items: center; gap: 8px; flex: 0 0 260px; height: 44px; padding: 0 14px; border-radius: 22px; background: var(--blanco); border: 1px solid var(--acento-300); color: var(--neutro-500); }
+  .buscar input { flex: 1; min-width: 0; border: 0; outline: 0; background: none; font: 400 14px/20px var(--f-cuerpo); color: var(--neutro-900); }
+  .saltos { display: flex; gap: 6px; overflow-x: auto; scrollbar-width: none; flex: 1; min-width: 0; }
+  .saltos::-webkit-scrollbar { display: none; }
+  .saltos .chip { padding: 7px 12px; }
+
+  .grupo { padding-top: 32px; scroll-margin-top: 80px; }
+  .grupo__cabecera { display: flex; align-items: baseline; gap: 10px; flex-wrap: wrap; }
+  .grupo__cabecera span { color: var(--neutro-500); font: 500 13px/16px var(--f-cuerpo); }
+  .rejilla { display: grid; grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); gap: 16px; margin-top: 16px; }
+  .tarjeta { display: flex; flex-direction: column; gap: 8px; }
+  .tarjeta__img { position: relative; aspect-ratio: 390 / 844; border-radius: 18px; overflow: hidden; background: var(--acento-100); border: 1px solid var(--acento-100); box-shadow: 0 6px 18px rgba(46, 89, 85, 0.08); transition: transform .18s ease, box-shadow .18s ease; }
+  .tarjeta:hover .tarjeta__img { transform: translateY(-2px); box-shadow: 0 12px 28px rgba(46, 89, 85, 0.16); }
+  .tarjeta__img img { display: block; width: 100%; height: 100%; object-fit: cover; }
+  .tarjeta__etiqueta { position: absolute; left: 8px; bottom: 8px; padding: 3px 8px; border-radius: 10px; background: rgba(38, 38, 38, 0.78); color: var(--blanco); font: 600 11px/14px var(--f-cuerpo); }
+  .tarjeta__texto { font: 600 13px/17px var(--f-cuerpo); }
+  .tarjeta__texto b { display: block; color: var(--primario-900); font: 700 12px/16px var(--f-cuerpo); }
+  .vacio { padding: 40px 0; color: var(--neutro-500); text-align: center; }
+
+  footer { margin-top: 56px; padding: 28px 0 40px; border-top: 1px solid var(--acento-100); color: var(--neutro-500); font-size: 13px; line-height: 20px; }
+  footer p + p { margin-top: 6px; }
+
+  @media (max-width: 760px) {
+    .contenedor { padding: 0 16px; }
+    .portada .contenedor { grid-template-columns: 1fr; padding-top: 36px; padding-bottom: 36px; }
+    .vista { display: none; }
+    .portada h1 { font-size: 32px; line-height: 38px; }
+    .indice .contenedor { flex-direction: column; align-items: stretch; }
+    .buscar { flex-basis: auto; }
+    .rejilla { grid-template-columns: repeat(auto-fill, minmax(104px, 1fr)); gap: 12px; }
+    .acciones .btn { flex: 1 1 auto; justify-content: center; }
+    .accesos { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 8px; }
+    .acceso { flex-direction: column; align-items: flex-start; gap: 8px; padding: 12px; }
+  }
+</style>
+</head>
+<body>
+<header class="portada">
+  <div class="contenedor">
+    <div>
+      <div class="marca"><img src="assets/img/logo-balto.png" alt="">Balto</div>
+      <h1>Prototipo navegable de la app</h1>
+      <p class="lead">Cada pantalla del Figma convertida a HTML, CSS y JavaScript, conectada siguiendo el flujo de uso. Diseñado para un móvil de 390 × 844 que se adapta a 380 × 820 y a cualquier pantalla.</p>
+      <div class="datos" id="datos"><span>165 pantallas</span><span>16 flujos</span><span>Lienzo 390 × 844</span></div>
+      <div class="acciones">
+        <a class="btn" href="pantallas/a1-splash.html"><span class="i">play_arrow</span>Iniciar prototipo</a>
+        <a class="btn sec" href="pantallas/inicio.html"><span class="i">home</span>Ir al inicio de la app</a>
+      </div>
+    </div>
+    <a class="vista" href="pantallas/inicio.html" aria-label="Abrir el inicio de la app"><img src="assets/miniaturas/inicio.webp" alt="Pantalla de inicio de Balto"></a>
+  </div>
+</header>
+
+<div class="contenedor">
+  <section aria-labelledby="t-recorrido">
+    <h2 id="t-recorrido">Recorrido principal</h2>
+    <p class="sub">Desde que se abre la app hasta tener el perfil de la mascota listo.</p>
+    <div class="recorrido" id="recorrido"></div>
+  </section>
+
+  <section aria-labelledby="t-accesos">
+    <h2 id="t-accesos">Desde el inicio</h2>
+    <p class="sub">Los módulos a los que se llega desde la pantalla de inicio y la barra de navegación.</p>
+    <div class="accesos" id="accesos"></div>
+  </section>
+</div>
+
+<nav class="indice" aria-label="Secciones del prototipo">
+  <div class="contenedor">
+    <label class="buscar"><span class="i">search</span><input type="search" id="buscar" placeholder="Buscar pantalla" aria-label="Buscar pantalla"></label>
+    <div class="saltos" id="saltos"></div>
+  </div>
+</nav>
+
+<main class="contenedor" id="mapa"></main>
+
+<div class="contenedor">
+  <footer>
+    <p>Las pantallas marcadas como «Estado alterno» representan situaciones (vacíos, errores, permisos, sesión vencida) que en el Figma no tienen un botón que lleve a ellas; se abren desde este mapa.</p>
+    <p>En el celular cada pantalla ocupa toda la vista; en el computador se muestra centrada y con un acceso de vuelta a este mapa.</p>
+  </footer>
+</div>
+
+<script src="js/pantallas.js"></script>
+<script>
+(function () {
+  "use strict";
+  var grupos = window.BALTO_PANTALLAS || [];
+  var porCodigo = {};
+  grupos.forEach(function (g) { g.pantallas.forEach(function (p) { porCodigo[p.codigo] = p; }); });
+
+  /* Estados que el Figma no enlaza desde ningún botón */
+  var alternos = ["A13", "B9", "D8", "I6", "J4", "J7", "K10", "L6", "M7", "M15", "M16", "O1", "O2", "O3", "O4", "O5", "O6", "O7", "O8", "O9"];
+
+  function el(tag, attrs, html) {
+    var n = document.createElement(tag);
+    for (var k in attrs) n.setAttribute(k, attrs[k]);
+    if (html != null) n.innerHTML = html;
+    return n;
+  }
+  function esc(t) { return String(t).replace(/[&<>"]/g, function (c) { return { "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]; }); }
+  function miniatura(p) { return "assets/miniaturas/" + p.archivo.replace(/\.html$/, ".webp"); }
+
+  /* Datos de la portada */
+  var total = 0;
+  grupos.forEach(function (g) { total += g.pantallas.length; });
+  document.getElementById("datos").innerHTML =
+    "<span>" + total + " pantallas</span><span>" + grupos.length + " flujos</span><span>Lienzo 390 × 844</span>";
+
+  /* Recorrido principal */
+  var pasos = ["A1", "A2", "A3", "A4", "A5", "A17", "B1", "B2", "B3", "B4", "B5", "C1", "C7", "Inicio"];
+  var rec = document.getElementById("recorrido");
+  pasos.forEach(function (c, i) {
+    var p = porCodigo[c];
+    if (!p) return;
+    if (i) rec.appendChild(el("span", { "class": "i", "aria-hidden": "true" }, "arrow_forward"));
+    rec.appendChild(el("a", { "class": "chip", href: "pantallas/" + p.archivo }, "<b>" + esc(c) + "</b>" + esc(p.nombre)));
+  });
+
+  /* Accesos desde el inicio */
+  var accesos = [
+    ["D2", "view_timeline", "Línea de tiempo", "Historial y soportes"],
+    ["E1", "add_circle", "Registrar evento", "Vacunas, consultas, peso…"],
+    ["F1", "monitor_heart", "Salud y evolución", "Carnet, peso, gráficas"],
+    ["G1", "medication", "Medicamentos", "Tratamientos y tomas"],
+    ["H1", "restaurant", "Alimentación", "Plan y comidas"],
+    ["I1", "psychology", "Hábitos", "Bitácora de comportamiento"],
+    ["J1", "notifications", "Alertas", "Vencimientos y avisos"],
+    ["K1", "local_hospital", "Veterinarias", "Buscar y agendar citas"],
+    ["L1", "ios_share", "Compartir perfil", "PDF y enlace"],
+    ["M1", "settings", "Ajustes", "Cuenta y suscripción"],
+    ["N1", "storefront", "Tienda", "Alimento y vacunas"],
+    ["D1", "badge", "Acceso rápido", "Datos para emergencias"]
+  ];
+  var acc = document.getElementById("accesos");
+  accesos.forEach(function (a) {
+    var p = porCodigo[a[0]];
+    if (!p) return;
+    acc.appendChild(el("a", { "class": "acceso", href: "pantallas/" + p.archivo },
+      '<span><span class="i">' + a[1] + "</span></span><span><strong>" + esc(a[2]) + "</strong><small>" + esc(a[3]) + "</small></span>"));
+  });
+
+  /* Mapa por secciones */
+  var mapa = document.getElementById("mapa");
+  var saltos = document.getElementById("saltos");
+  grupos.forEach(function (g, gi) {
+    var id = "grupo-" + gi;
+    var letra = /^[A-Z] ·/.test(g.nombre) ? g.nombre.charAt(0) : g.nombre;
+    saltos.appendChild(el("a", { "class": "chip", href: "#" + id }, esc(letra)));
+    var sec = el("section", { "class": "grupo", id: id, "aria-labelledby": id + "-t" });
+    sec.appendChild(el("div", { "class": "grupo__cabecera" },
+      '<h2 id="' + id + '-t">' + esc(g.nombre) + "</h2><span>" + g.pantallas.length + (g.pantallas.length === 1 ? " pantalla" : " pantallas") + "</span>"));
+    var rej = el("div", { "class": "rejilla" });
+    g.pantallas.forEach(function (p) {
+      var alterno = alternos.indexOf(p.codigo) >= 0;
+      var t = el("a", { "class": "tarjeta", href: "pantallas/" + p.archivo, "data-busqueda": (p.codigo + " " + p.nombre + " " + g.nombre).toLowerCase() });
+      t.innerHTML =
+        '<span class="tarjeta__img"><img loading="lazy" decoding="async" src="' + miniatura(p) + '" alt="">' +
+        (alterno ? '<span class="tarjeta__etiqueta">Estado alterno</span>' : "") + "</span>" +
+        '<span class="tarjeta__texto"><b>' + esc(p.codigo) + "</b>" + esc(p.nombre) + "</span>";
+      rej.appendChild(t);
+    });
+    sec.appendChild(rej);
+    mapa.appendChild(sec);
+  });
+  var vacio = el("p", { "class": "vacio", hidden: "" }, "No hay pantallas con ese nombre.");
+  mapa.appendChild(vacio);
+
+  /* Buscador */
+  function normalizar(t) { return t.toLowerCase().normalize("NFD").replace(/[̀-ͯ]/g, ""); }
+  document.getElementById("buscar").addEventListener("input", function (e) {
+    var q = normalizar(e.target.value.trim());
+    var algun = false;
+    Array.prototype.forEach.call(document.querySelectorAll(".grupo"), function (sec) {
+      var visibles = 0;
+      Array.prototype.forEach.call(sec.querySelectorAll(".tarjeta"), function (t) {
+        var ok = !q || normalizar(t.getAttribute("data-busqueda")).indexOf(q) >= 0;
+        t.hidden = !ok;
+        if (ok) visibles++;
+      });
+      sec.hidden = !visibles;
+      if (visibles) algun = true;
+    });
+    vacio.hidden = algun;
+  });
+})();
+</script>
+</body>
+</html>

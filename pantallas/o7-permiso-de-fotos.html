@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>O7 · Permiso de fotos · Balto</title>
+<link rel="stylesheet" href="../css/balto.css">
+</head>
+<body>
+<div class="escenario"><div class="dispositivo">
+<main class="pantalla">
+  <div class="barra-estado"><span class="hora">9:41</span><span class="indicadores"><i class="i">signal_cellular_alt</i><i class="i">wifi</i><i class="i">battery_full</i></span></div>
+  <div class="contenido tema-arena">
+    <div class="encabezado">
+      <a class="boton-icono" href="e8-adjuntar-soporte.html" data-volver aria-label="Volver" style="color: #262626"><i class="i">arrow_back</i></a>
+      <h1 class="encabezado__titulo">Fotos</h1>
+      <span class="espacio"></span>
+    </div>
+    <div class="estado compacto">
+      <div class="contenedor-icono c104 cuadrado"><i class="i">photo_library</i></div>
+      <p class="t-t1 c-900">Acceso a tus fotos</p>
+      <p class="t-cuerpo c-500">Para elegir el carnet o los exámenes que ya tienes guardados.</p>
+    </div>
+    <div class="lista">
+      <label class="fila suave" style="cursor: pointer;">
+        <span class="fila__icono"><i class="i">check_circle</i></span>
+        <span class="fila__textos"><span class="fila__titulo">Solo las fotos que elijas</span><span class="fila__sub">Recomendado</span></span>
+        <i class="i">chevron_right</i>
+        <input type="file" accept="image/*" data-ir-tras="e12-revisar-la-foto.html" data-error-archivo="e13-archivo-muy-pesado.html" hidden>
+      </label>
+      <label class="fila suave" style="cursor: pointer;">
+        <span class="fila__icono"><i class="i">folder</i></span>
+        <span class="fila__textos"><span class="fila__titulo">Toda la galería</span><span class="fila__sub">Acceso completo</span></span>
+        <i class="i">chevron_right</i>
+        <input type="file" accept="image/*,application/pdf" data-ir-tras="e12-revisar-la-foto.html" data-error-archivo="e13-archivo-muy-pesado.html" hidden>
+      </label>
+    </div>
+    <div class="nota amplia baja" style="height: 59px;"><i class="i">settings</i><p>Puedes cambiar esto cuando quieras en Ajustes del celular.</p></div>
+  </div>
+  <div class="barra-accion transparente">
+    <label class="boton">Elegir fotos<input type="file" accept="image/*" data-ir-tras="e12-revisar-la-foto.html" data-error-archivo="e13-archivo-muy-pesado.html" hidden></label>
+    <label class="boton secundario">Tomar una foto<input type="file" accept="image/*" capture="environment" data-ir-tras="e12-revisar-la-foto.html" data-error-archivo="e13-archivo-muy-pesado.html" hidden></label>
+  </div>
+</main>
+</div></div>
+<script src="../js/app.js"></script>
+</body>
+</html>

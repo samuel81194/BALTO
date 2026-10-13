@@ -392,6 +392,17 @@
     out.textContent = Math.min(max, Math.max(min, Number(out.textContent) + Number(b.getAttribute("data-paso"))));
   });
 
+  /* Pedir el permiso real de notificaciones (si el navegador lo admite) y seguir */
+  document.addEventListener("click", function (e) {
+    var b = e.target.closest("[data-permiso-avisos]");
+    if (!b) return;
+    e.preventDefault();
+    var destino = b.getAttribute("href");
+    if ("Notification" in window && Notification.permission === "default") {
+      Notification.requestPermission().then(function () { ir(destino); }, function () { ir(destino); });
+    } else ir(destino);
+  });
+
   /* ---------- Barra de presentación (escritorio) ---------- */
   function montarPresentacion() {
     if (!window.BALTO_PANTALLAS || document.querySelector(".presentacion")) return;
