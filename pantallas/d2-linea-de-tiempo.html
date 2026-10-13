@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>D2 · Línea de tiempo · Balto</title>
+<link rel="stylesheet" href="../css/balto.css">
+</head>
+<body>
+<div class="escenario"><div class="dispositivo">
+<main class="pantalla">
+  <div class="desplazable con-nav">
+    <div class="contenido" style="--gap: 20px;">
+      <div class="encabezado">
+        <a class="boton-icono" href="inicio.html" data-volver aria-label="Volver"><i class="i">arrow_back</i></a>
+        <h1 class="encabezado__titulo">Línea de tiempo</h1>
+        <a class="foto-mascota" href="b6-cedula-de-luna.html" aria-label="Perfil de Luna" style="width: 44px; height: 44px; border-radius: 22px; --fm-fin: #2e5955;"><i class="i" style="font-size: 17.6px; line-height: 17.6px;">pets</i></a>
+      </div>
+      <form class="buscador" data-buscar="vacun|antirr|rab|derm|consul|hemo|exam|peso|despar|luna" data-resultados="d9-resultados-de-busqueda.html" data-sin-resultados="d10-busqueda-sin-resultados.html">
+        <label class="campo-busqueda"><i class="i">search</i><input type="search" placeholder="Buscar en el historial de Luna" enterkeyhint="search"></label>
+        <a class="boton-icono primario b52" href="d3-filtros-de-la-linea-de-tiempo.html" aria-label="Filtros"><i class="i">tune</i></a>
+      </form>
+      <div class="carril" style="gap: 8px;" data-grupo>
+        <span class="chip activo">Todos</span>
+        <span class="chip"><i class="i">vaccines</i>Vacunas</span>
+        <span class="chip"><i class="i">stethoscope</i>Consultas</span>
+        <span class="chip"><i class="i">labs</i>Exámenes</span>
+        <span class="chip"><i class="i">monitor_weight</i>Peso</span>
+      </div>
+      <div class="mes"><p class="t-t3 c-900">Septiembre 2026</p><p class="t-micro c-500">3 EVENTOS</p></div>
+      <div class="linea" style="width: 346px;">
+        <span class="linea__riel" style="height: 224px;"></span>
+        <div class="linea__fila">
+          <span class="punto activo"></span>
+          <a class="evento" href="d4-detalle-de-evento.html">
+            <span class="evento__icono suave"><i class="i">vaccines</i></span>
+            <span class="evento__textos"><span class="evento__titulo">Vacuna antirrábica</span><span class="evento__sub">Refuerzo anual · Vet. Norte</span><span class="evento__meta"><span>12 SEP 2026</span><i class="i">attach_file</i><span>1 soporte</span></span></span>
+            <i class="i">chevron_right</i>
+          </a>
+        </div>
+        <div class="linea__fila">
+          <span class="punto"></span>
+          <a class="evento" href="d4-detalle-de-evento.html">
+            <span class="evento__icono primario"><i class="i">stethoscope</i></span>
+            <span class="evento__textos"><span class="evento__titulo">Consulta dermatológica</span><span class="evento__sub">Control de piel · Dra. Gómez</span><span class="evento__meta"><span>05 SEP 2026</span><i class="i">attach_file</i><span>2 soportes</span></span></span>
+            <i class="i">chevron_right</i>
+          </a>
+        </div>
+        <div class="linea__fila">
+          <span class="punto"></span>
+          <a class="evento" href="f4-evolucion-del-peso.html">
+            <span class="evento__icono gris"><i class="i">monitor_weight</i></span>
+            <span class="evento__textos"><span class="evento__titulo">Peso registrado</span><span class="evento__sub">28,4 kg · +0,3 kg vs. agosto</span><span class="evento__meta"><span>01 SEP 2026</span><i class="i">attach_file</i><span>Sin soporte</span></span></span>
+            <i class="i">chevron_right</i>
+          </a>
+        </div>
+      </div>
+      <div class="mes"><p class="t-t3 c-900">Agosto 2026</p><p class="t-micro c-500">2 EVENTOS</p></div>
+      <div class="linea">
+        <span class="linea__riel" style="height: 132px;"></span>
+        <div class="linea__fila">
+          <span class="punto"></span>
+          <a class="evento" href="f7-detalle-de-examen.html">
+            <span class="evento__icono oscuro"><i class="i">labs</i></span>
+            <span class="evento__textos"><span class="evento__titulo">Hemograma completo</span><span class="evento__sub">Resultados normales</span><span class="evento__meta"><span>18 AGO 2026</span><i class="i">attach_file</i><span>1 PDF</span></span></span>
+            <i class="i">chevron_right</i>
+          </a>
+        </div>
+        <div class="linea__fila">
+          <span class="punto"></span>
+          <a class="evento flotante" href="d4-detalle-de-evento.html">
+            <span class="evento__icono suave"><i class="i">pest_control</i></span>
+            <span class="evento__textos"><span class="evento__titulo">Desparasitación interna</span><span class="evento__sub">Drontal Plus · 1 tableta</span><span class="evento__meta"><span>02 AGO 2026</span><i class="i">attach_file</i><span>1 soporte</span></span></span>
+            <i class="i">chevron_right</i>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <nav class="nav-inferior"><a href="inicio.html" aria-label="Inicio"><i class="i">home</i></a><a href="d2-linea-de-tiempo.html" class="activo" aria-label="Línea de tiempo"><i class="i">view_timeline</i></a><a href="e1-selector-de-tipo-de-evento.html" class="registrar" aria-label="Registrar"><i class="i">add</i></a><a href="n1-tienda.html" aria-label="Tienda"><i class="i">storefront</i></a><a href="j1-centro-de-alertas.html" aria-label="Alertas"><i class="i">notifications</i></a></nav>
+  <div class="barra-estado"><span class="hora">9:41</span><span class="indicadores"><i class="i">signal_cellular_alt</i><i class="i">wifi</i><i class="i">battery_full</i></span></div>
+</main>
+</div></div>
+<script src="../js/app.js"></script>
+</body>
+</html>

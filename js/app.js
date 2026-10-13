@@ -101,6 +101,21 @@
     el = e.target.closest(".casilla");
     if (el) { alternarCasilla(el); return; }
 
+    /* Rotar una vista previa */
+    el = e.target.closest("[data-rotar]");
+    if (el) {
+      var obj = document.querySelector(el.getAttribute("data-rotar"));
+      if (obj) { var g = (Number(obj.getAttribute("data-giro") || 0) + 90) % 360; obj.setAttribute("data-giro", g); obj.style.transform = "rotate(" + g + "deg)"; obj.style.transition = "transform .25s ease"; }
+      return;
+    }
+
+    /* Limpiar una selección de chips */
+    el = e.target.closest("[data-limpiar]");
+    if (el) {
+      Array.prototype.forEach.call(document.querySelectorAll(el.getAttribute("data-limpiar") + " .chip"), function (c) { c.classList.remove("activo"); });
+      return;
+    }
+
     /* Chip "Agregar": pide un texto y crea un chip activo nuevo */
     el = e.target.closest("[data-agregar-chip]");
     if (el) {
@@ -197,6 +212,17 @@
     var archivo = inp.files[0];
     var valido = /^(image\/(jpeg|png)|application\/pdf)$/.test(archivo.type) && archivo.size <= 10 * 1024 * 1024;
     ir(!valido && inp.getAttribute("data-error-archivo") ? inp.getAttribute("data-error-archivo") : inp.getAttribute("data-ir-tras"));
+  });
+
+  /* Búsqueda: con coincidencias muestra resultados; si no, el estado vacío */
+  document.addEventListener("submit", function (e) {
+    var f = e.target;
+    if (!f.matches("[data-buscar]")) return;
+    e.preventDefault();
+    var q = (f.querySelector("input").value || "").trim();
+    var patron = new RegExp(f.getAttribute("data-buscar") || ".", "i");
+    if (!q) return;
+    ir(patron.test(q) ? f.getAttribute("data-resultados") : f.getAttribute("data-sin-resultados"));
   });
 
   /* Requisitos de contraseña en vivo */

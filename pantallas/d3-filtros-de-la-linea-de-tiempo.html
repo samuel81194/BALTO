@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>D3 · Filtros de la línea de tiempo · Balto</title>
+<link rel="stylesheet" href="../css/balto.css">
+</head>
+<body>
+<div class="escenario"><div class="dispositivo">
+<main class="pantalla">
+  <div class="contenido">
+    <div class="encabezado">
+      <span class="boton-icono"><i class="i">arrow_back</i></span>
+      <h1 class="encabezado__titulo">Línea de tiempo</h1>
+      <span class="espacio"></span>
+    </div>
+    <div class="buscador">
+      <span class="campo-busqueda" style="border: 0;"><i class="i">search</i><span class="t-cuerpo nowrap">Buscar en el historial de Luna</span></span>
+      <span class="boton-icono primario b52"><i class="i">tune</i></span>
+    </div>
+    <div class="eventos">
+      <div class="evento sombra" style="--x: 0;">
+        <span class="evento__icono"><i class="i">vaccines</i></span>
+        <span class="evento__textos"><span class="evento__titulo">Vacuna antirrábica</span><span class="evento__sub">Refuerzo anual · Vet. Norte</span><span class="evento__meta"><span style="color: var(--primario-900)">12 SEP 2026</span><i class="i">attach_file</i><span>1 soporte</span></span></span>
+        <i class="i">chevron_right</i>
+      </div>
+      <div class="evento sombra">
+        <span class="evento__icono primario"><i class="i">stethoscope</i></span>
+        <span class="evento__textos"><span class="evento__titulo">Consulta dermatológica</span><span class="evento__sub">Control de piel · Dra. Gómez</span><span class="evento__meta"><span style="color: var(--primario-900)">05 SEP 2026</span><i class="i">attach_file</i><span>2 soportes</span></span></span>
+        <i class="i">chevron_right</i>
+      </div>
+    </div>
+  </div>
+  <a class="velo claro" href="d2-linea-de-tiempo.html" data-volver aria-label="Cerrar filtros"></a>
+  <div class="hoja" role="dialog" aria-label="Filtrar eventos" style="top: 377px;">
+    <div class="hoja__asa"></div>
+    <p class="t-t2 c-900">Filtrar eventos</p>
+    <p class="t-micro c-500 nowrap">TIPO DE EVENTO</p>
+    <div class="cuadricula" id="tipos">
+      <span class="chip activo" data-alternar><i class="i">vaccines</i>Vacunas</span>
+      <span class="chip activo" data-alternar><i class="i">stethoscope</i>Consultas</span>
+      <span class="chip" data-alternar><i class="i">labs</i>Exámenes</span>
+      <span class="chip" data-alternar><i class="i">medication</i>Medicación</span>
+      <span class="chip" data-alternar><i class="i">monitor_weight</i>Peso</span>
+      <span class="chip" data-alternar><i class="i">pets</i>Hábitos</span>
+    </div>
+    <p class="t-micro c-500 nowrap">RANGO DE FECHAS</p>
+    <div class="campos">
+      <label class="campo">
+        <span class="campo__etiqueta">Desde</span>
+        <span class="campo__caja"><input inputmode="numeric" value="01/01/2026"></span>
+      </label>
+      <label class="campo">
+        <span class="campo__etiqueta">Hasta</span>
+        <span class="campo__caja"><input inputmode="numeric" value="23/09/2026"></span>
+      </label>
+    </div>
+    <div class="botones">
+      <button type="button" class="boton secundario" data-limpiar="#tipos">Limpiar</button>
+      <a class="boton" href="d2-linea-de-tiempo.html">Aplicar</a>
+    </div>
+  </div>
+  <div class="barra-estado encima"><span class="hora">9:41</span><span class="indicadores"><i class="i">signal_cellular_alt</i><i class="i">wifi</i><i class="i">battery_full</i></span></div>
+</main>
+</div></div>
+<script src="../js/app.js"></script>
+</body>
+</html>

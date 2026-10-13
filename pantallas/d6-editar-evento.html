@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>D6 · Editar evento · Balto</title>
+<link rel="stylesheet" href="../css/balto.css">
+</head>
+<body>
+<div class="escenario"><div class="dispositivo">
+<main class="pantalla">
+  <form id="formulario" class="contenido" data-exito="d4-detalle-de-evento.html" onsubmit="return false">
+    <div class="encabezado">
+      <a class="boton-icono" href="d4-detalle-de-evento.html" data-volver aria-label="Cerrar"><i class="i">close</i></a>
+      <h1 class="encabezado__titulo">Editar evento</h1>
+      <span class="espacio"></span>
+    </div>
+    <div style="display: flex; overflow: hidden;"><span class="chip activo"><i class="i">vaccines</i>Vacuna</span></div>
+    <label class="campo">
+      <span class="campo__etiqueta">Vacuna aplicada *</span>
+      <span class="campo__caja"><i class="i">vaccines</i><input value="Antirrábica · Nobivac Rabies" required></span>
+    </label>
+    <div class="campos">
+      <label class="campo">
+        <span class="campo__etiqueta">Fecha aplicada *</span>
+        <span class="campo__caja"><input inputmode="numeric" value="12/09/2026" required></span>
+      </label>
+      <label class="campo">
+        <span class="campo__etiqueta">Próximo refuerzo</span>
+        <span class="campo__caja"><input inputmode="numeric" value="12/09/2027"></span>
+      </label>
+    </div>
+    <label class="campo foco">
+      <span class="campo__etiqueta">Veterinaria</span>
+      <span class="campo__caja"><i class="i">local_hospital</i><input value="Clínica Veterinaria Norte"></span>
+    </label>
+    <div class="fila borde">
+      <span class="fila__icono"><i class="i">image</i></span>
+      <span class="fila__textos" style="gap: 2px;"><span class="fila__titulo">carnet_luna.jpg</span><span class="fila__sub">Soporte adjunto</span></span>
+      <label class="vinculo">Cambiar<input type="file" accept="image/*,application/pdf" hidden></label>
+    </div>
+  </form>
+  <div class="barra-accion sombra">
+    <a class="boton texto-f9" href="d4-detalle-de-evento.html" data-enviar="formulario">Guardar cambios<i class="i">check</i></a>
+  </div>
+  <div class="barra-estado"><span class="hora">9:41</span><span class="indicadores"><i class="i">signal_cellular_alt</i><i class="i">wifi</i><i class="i">battery_full</i></span></div>
+</main>
+</div></div>
+<script src="../js/app.js"></script>
+</body>
+</html>
