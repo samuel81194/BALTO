@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>G3 · Agregar medicamento · Balto</title>
+<link rel="stylesheet" href="../css/balto.css">
+</head>
+<body>
+<div class="escenario"><div class="dispositivo">
+<main class="pantalla">
+  <form id="formulario" class="contenido" data-exito="g4-definir-horarios-de-toma.html" onsubmit="return false">
+    <div class="encabezado">
+      <a class="boton-icono" href="g1-listado-de-medicamentos.html" data-volver aria-label="Cerrar"><i class="i">close</i></a>
+      <h1 class="encabezado__titulo">Agregar medicamento</h1>
+      <span class="espacio"></span>
+    </div>
+    <div class="progreso">
+      <p class="progreso__texto">PASO 1 DE 2 · MEDICAMENTO</p>
+      <div class="progreso__barras"><span class="hecho"></span><span></span></div>
+    </div>
+    <label class="campo foco">
+      <span class="campo__etiqueta">Nombre *</span>
+      <span class="campo__caja"><i class="i">medication</i><input value="Amoxicilina" required></span>
+    </label>
+    <div class="campos">
+      <label class="campo"><span class="campo__etiqueta">Presentación</span><span class="campo__caja"><input value="Cápsula 250 mg"></span></label>
+      <label class="campo"><span class="campo__etiqueta">Vía</span><span class="campo__caja"><input value="Oral"></span></label>
+    </div>
+    <div class="campos">
+      <label class="campo"><span class="campo__etiqueta">Dosis</span><span class="campo__caja"><input value="1 cápsula"></span></label>
+      <label class="campo"><span class="campo__etiqueta">Duración</span><span class="campo__caja"><input value="7 días"></span></label>
+    </div>
+    <label class="campo">
+      <span class="campo__etiqueta">Prescrito por</span>
+      <span class="campo__caja"><i class="i">person</i><input value="Dra. Gómez · Vet. Norte"></span>
+    </label>
+    <label class="marcador discontinuo" style="height: 90px; background: rgba(224, 223, 242, 0.6);"><i class="i">receipt_long</i><span>Foto de la fórmula médica</span><input type="file" accept="image/*,application/pdf" data-ir-tras="c12-leyendo-el-documento.html?siguiente=g7-revisar-datos-de-la-formula.html" data-error-archivo="c13-no-pudimos-leer-el-archivo.html" hidden></label>
+  </form>
+  <div class="barra-accion">
+    <a class="boton texto-f9" href="g4-definir-horarios-de-toma.html" data-enviar="formulario">Siguiente: horarios<i class="i">arrow_forward</i></a>
+  </div>
+  <div class="barra-estado"><span class="hora">9:41</span><span class="indicadores"><i class="i">signal_cellular_alt</i><i class="i">wifi</i><i class="i">battery_full</i></span></div>
+</main>
+</div></div>
+<script src="../js/app.js"></script>
+</body>
+</html>

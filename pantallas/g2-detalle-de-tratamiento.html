@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>G2 · Detalle de tratamiento · Balto</title>
+<link rel="stylesheet" href="../css/balto.css">
+</head>
+<body>
+<div class="escenario"><div class="dispositivo">
+<main class="pantalla">
+  <div class="contenido" style="--gap: 15px;">
+    <div class="encabezado">
+      <a class="boton-icono" href="g1-listado-de-medicamentos.html" data-volver aria-label="Volver"><i class="i">arrow_back</i></a>
+      <h1 class="encabezado__titulo">Tratamiento</h1>
+      <a class="boton-icono" href="g8-finalizar-tratamiento.html" aria-label="Más opciones"><i class="i">more_horiz</i></a>
+    </div>
+    <div class="tarjeta-tratamiento">
+      <span class="decoracion" aria-hidden="true"></span>
+      <div class="tarjeta-tratamiento__med">
+        <span class="contenedor-icono"><i class="i">medication</i></span>
+        <span><span class="t-t2">Amoxicilina</span><span class="t-pequeno">250 mg · Cápsula oral</span></span>
+        <span class="pastilla micro">VIGENTE</span>
+      </div>
+      <div class="rasgos">
+        <div class="rasgo verde"><i class="i">schedule</i><span>Cada 12 h</span></div>
+        <div class="rasgo verde"><i class="i">date_range</i><span>7 días</span></div>
+        <a class="rasgo verde" href="d5-ver-o-descargar-soporte.html"><i class="i">description</i><span>Fórmula</span></a>
+      </div>
+      <div class="avance">
+        <div class="avance__etiquetas"><span>Día 3 de 7</span><span>43 %</span></div>
+        <div class="avance__barra"><span style="width: 128px;"></span></div>
+      </div>
+    </div>
+    <div class="seccion"><p class="t-t3 c-900">Horarios de toma</p><a class="enlace-chico" href="g4-definir-horarios-de-toma.html">Editar</a></div>
+    <div class="cuadricula" style="flex-wrap: nowrap; white-space: nowrap; align-items: center;">
+      <span class="chip activo"><i class="i">schedule</i>08:00</span>
+      <span class="chip activo"><i class="i">schedule</i>20:00</span>
+      <a class="chip" href="g4-definir-horarios-de-toma.html"><i class="i">add</i>Agregar</a>
+    </div>
+    <div class="recordatorio">
+      <i class="i">notifications_active</i>
+      <span><span>Recordatorio de toma</span><span>10 min antes de cada horario</span></span>
+      <span class="interruptor encendido" role="switch" aria-checked="true" aria-label="Recordatorio de toma"></span>
+    </div>
+    <div class="seccion"><p class="t-t3 c-900">Tomas</p><span class="t-micro c-500">MIÉ 23 SEP</span></div>
+    <div class="lista">
+      <div class="toma">
+        <span class="toma__hora"><span>08:00</span><span>AM</span></span>
+        <span class="toma__division"></span>
+        <span class="fila__textos" style="gap: 2px;"><span class="fila__titulo">Mañana</span><span class="fila__sub">Tomada 8:05 a. m.</span></span>
+        <span class="pastilla"><i class="i">check_circle</i>Tomada</span>
+      </div>
+      <div class="toma">
+        <span class="toma__hora"><span>20:00</span><span>PM</span></span>
+        <span class="toma__division"></span>
+        <span class="fila__textos" style="gap: 2px;"><span class="fila__titulo">Noche</span><span class="fila__sub">Aviso 7:50 p. m.</span></span>
+        <button type="button" class="boton chico" data-confirmar-toma>Confirmar</button>
+      </div>
+      <a class="toma" href="g6-toma-omitida.html">
+        <span class="toma__hora"><span>20:00</span><span>PM</span></span>
+        <span class="toma__division"></span>
+        <span class="fila__textos" style="gap: 2px;"><span class="fila__titulo">Ayer · noche</span><span class="fila__sub">Aviso reprogramado</span></span>
+        <span class="pastilla oscura"><i class="i">close</i>Omitida</span>
+      </a>
+    </div>
+  </div>
+  <div class="barra-estado"><span class="hora">9:41</span><span class="indicadores"><i class="i">signal_cellular_alt</i><i class="i">wifi</i><i class="i">battery_full</i></span></div>
+</main>
+</div></div>
+<script src="../js/app.js"></script>
+</body>
+</html>

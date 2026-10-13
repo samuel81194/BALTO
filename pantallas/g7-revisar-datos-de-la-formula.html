@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>G7 · Revisar datos de la fórmula · Balto</title>
+<link rel="stylesheet" href="../css/balto.css">
+</head>
+<body>
+<div class="escenario"><div class="dispositivo">
+<main class="pantalla">
+  <div class="barra-estado"><span class="hora">9:41</span><span class="indicadores"><i class="i">signal_cellular_alt</i><i class="i">wifi</i><i class="i">battery_full</i></span></div>
+  <form id="formulario" class="contenido" data-exito="g4-definir-horarios-de-toma.html" onsubmit="return false" style="overflow: hidden;">
+    <div class="encabezado">
+      <a class="boton-icono" href="g3-agregar-medicamento.html" data-volver aria-label="Volver"><i class="i">arrow_back</i></a>
+      <h1 class="encabezado__titulo tema-arena">Revisar fórmula</h1>
+      <span class="espacio"></span>
+    </div>
+    <div class="progreso">
+      <p class="progreso__texto" style="height: 24px;">PASO 1 DE 2 · MEDICAMENTO</p>
+      <div class="progreso__barras"><span class="hecho"></span><span></span></div>
+    </div>
+    <a class="fila suave tema-arena" href="d5-ver-o-descargar-soporte.html">
+      <span class="fila__icono"><i class="i">photo</i></span>
+      <span class="fila__textos"><span class="fila__titulo">formula_luna.jpg</span><span class="fila__sub">Foto · 1,1 MB · Leída</span></span>
+      <i class="i c-500">visibility</i>
+    </a>
+    <label class="campo">
+      <span class="campo__etiqueta">Medicamento</span>
+      <span class="campo__caja"><i class="i">medication</i><input value="Amoxicilina 250 mg" required></span>
+    </label>
+    <div class="campos">
+      <label class="campo"><span class="campo__etiqueta">Dosis</span><span class="campo__caja"><i class="i">straighten</i><input value="1 cápsula"></span></label>
+      <label class="campo"><span class="campo__etiqueta">Cada</span><span class="campo__caja"><i class="i">schedule</i><input value="12 horas"></span></label>
+    </div>
+    <div class="campos">
+      <label class="campo"><span class="campo__etiqueta">Desde</span><span class="campo__caja"><i class="i">event</i><input inputmode="numeric" value="21/09/2026"></span></label>
+      <label class="campo"><span class="campo__etiqueta">Hasta</span><span class="campo__caja"><i class="i">event_busy</i><input inputmode="numeric" value="28/09/2026"></span></label>
+    </div>
+    <div class="nota amplia baja tema-arena" style="height: 56px;"><i class="i error">warning</i><p>Confirma la dosis con tu veterinario antes de activar recordatorios.</p></div>
+  </form>
+  <div class="barra-accion transparente">
+    <a class="boton" href="g4-definir-horarios-de-toma.html" data-enviar="formulario">Confirmar y seguir</a>
+    <a class="boton secundario" href="g3-agregar-medicamento.html">Corregir</a>
+  </div>
+</main>
+</div></div>
+<script src="../js/app.js"></script>
+</body>
+</html>

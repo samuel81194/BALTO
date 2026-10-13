@@ -158,6 +158,21 @@
     }
 
     /* Chip "Agregar": pide un texto y crea un chip activo nuevo */
+    /* Confirmar una toma: el botón se vuelve la pastilla "Tomada" */
+    el = e.target.closest("[data-confirmar-toma]");
+    if (el) {
+      e.preventDefault();
+      var fila = el.closest(".toma, .fila");
+      var sub = fila && fila.querySelector(".fila__sub");
+      var ahora = new Date();
+      if (sub) sub.textContent = "Tomada " + ahora.getHours() + ":" + String(ahora.getMinutes()).padStart(2, "0");
+      var hecha = document.createElement("span");
+      hecha.className = "pastilla";
+      hecha.innerHTML = '<i class="i">check_circle</i>Tomada';
+      el.replaceWith(hecha);
+      return;
+    }
+
     /* Chip sugerido: al tocarlo se agrega como chip quitable */
     el = e.target.closest("[data-sugerencia]");
     if (el) { agregarChipQuitable(el.parentNode, el.getAttribute("data-sugerencia")); el.remove(); return; }
