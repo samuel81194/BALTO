@@ -874,3 +874,10 @@ p { overflow-wrap: break-word; }
 .aviso-push__app > :nth-child(2) { flex: 1 0 0; min-width: 1px; }
 .aviso-push .botones > .boton { height: 40px; }
 .fila.borde-suave.seleccionada { border: 0; }
+
+/* ---------- Alimentación (H) ---------- */
+.destacada.oscura { background: var(--neutro-900); }
+.destacada__fila .tenue { color: rgba(255, 255, 255, 0.7); }
+.boton-icono.suave { background: var(--acento-300); border: 0; color: var(--primario-900); }
+.contador { display: flex; align-items: center; gap: 14px; flex-shrink: 0; }
+.contador > span { font: 500 18px/24px var(--f-titulo); color: var(--neutro-900); min-width: 11px; text-align: center; }

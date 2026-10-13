@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>H2 · Registrar alimento · Balto</title>
+<link rel="stylesheet" href="../css/balto.css">
+</head>
+<body>
+<div class="escenario"><div class="dispositivo">
+<main class="pantalla">
+  <form id="formulario" class="contenido" onsubmit="return false">
+    <div class="encabezado">
+      <a class="boton-icono" href="h1-plan-de-alimentacion.html" data-volver aria-label="Cerrar"><i class="i">close</i></a>
+      <h1 class="encabezado__titulo">Registrar alimento</h1>
+      <span class="espacio"></span>
+    </div>
+    <div class="selector">
+      <button type="button" class="activo">Concentrado</button>
+      <button type="button">Casero</button>
+      <button type="button">Snack</button>
+    </div>
+    <label class="campo foco">
+      <span class="campo__etiqueta">Marca *</span>
+      <span class="campo__caja"><i class="i">storefront</i><input id="marca" class="ejemplo-900" placeholder="Marca del concentrado"></span>
+    </label>
+    <div class="campos">
+      <label class="campo"><span class="campo__etiqueta">Tipo</span><span class="campo__caja"><input id="tipo" value="Adulto · salmón"></span></label>
+      <label class="campo"><span class="campo__etiqueta">Presentación</span><span class="campo__caja"><input value="15 kg"></span></label>
+    </div>
+    <div class="nota"><i class="i">shield</i><p>Revisaremos que el alimento sea seguro para su especie.</p></div>
+  </form>
+  <div class="barra-accion">
+    <a class="boton texto-f9" id="continuar" href="h4-porcion-sugerida-y-horarios.html">Continuar<i class="i">arrow_forward</i></a>
+  </div>
+  <div class="barra-estado"><span class="hora">9:41</span><span class="indicadores"><i class="i">signal_cellular_alt</i><i class="i">wifi</i><i class="i">battery_full</i></span></div>
+  <script>
+    /* Si el alimento escrito es tóxico para perros, se muestra la alerta */
+    document.getElementById("continuar").addEventListener("click", function (e) {
+      var texto = document.getElementById("marca").value + " " + document.getElementById("tipo").value;
+      if (/uva|pasa|chocolate|cebolla|ajo|xilitol|aguacate|cafe|café|alcohol|macadamia/i.test(texto)) {
+        e.preventDefault();
+        window.location.href = "h3-alerta-de-alimento-toxico.html";
+      }
+    });
+  </script>
+</main>
+</div></div>
+<script src="../js/app.js"></script>
+</body>
+</html>
