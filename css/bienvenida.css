@@ -1,0 +1,25 @@
+/* Carrusel de bienvenida (A2, A2.2, A2.3) */
+.marcador-hero {
+  height: 320px; border-radius: 24px; overflow: hidden;
+  background: var(--primario-800);
+  border: 1.5px dashed var(--primario-800);
+  display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 8px;
+  color: var(--primario-800); white-space: nowrap;
+}
+.puntos > a { display: block; }
+.puntos > a > span { display: block; width: 8px; height: 8px; border-radius: 4px; background: var(--acento-300); }
+.titulos { display: flex; flex-direction: column; gap: 6px; overflow: hidden; }
+.hero-marca {
+  position: absolute; width: 473px; height: 210px;
+  font: 600 96px/44px var(--f-titulo); letter-spacing: -1.92px;
+  color: var(--neutro-0);
+  pointer-events: none;
+}
+.hero-lema {
+  position: absolute; height: 43px;
+  font: 600 16px/44px var(--f-titulo); letter-spacing: -0.32px;
+  color: var(--neutro-0);
+  pointer-events: none;
+}
+.hero-foto { position: absolute; pointer-events: none; }
+.boton-bienvenida { position: absolute; left: 24px; top: 771px; width: 342px; }

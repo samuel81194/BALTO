@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>A3 · Crear cuenta · Balto</title>
+<link rel="stylesheet" href="../css/balto.css">
+</head>
+<body>
+<div class="escenario"><div class="dispositivo">
+<main class="pantalla">
+  <form class="contenido" action="a4-verificar-correo.html" onsubmit="return false">
+    <div class="encabezado">
+      <a class="boton-icono" href="a2-bienvenida.html" data-volver aria-label="Volver"><i class="i">arrow_back</i></a>
+      <h1 class="encabezado__titulo">Crear cuenta</h1>
+      <span class="espacio"></span>
+    </div>
+    <div class="progreso">
+      <p class="progreso__texto">PASO 1 DE 3 · TU CUENTA</p>
+      <div class="progreso__barras"><span class="hecho"></span><span></span><span></span></div>
+    </div>
+    <label class="campo foco">
+      <span class="campo__etiqueta">Correo electrónico</span>
+      <span class="campo__caja"><i class="i">mail</i><input type="email" value="samuel@correo.com" autocomplete="email"></span>
+    </label>
+    <label class="campo">
+      <span class="campo__etiqueta">Contraseña</span>
+      <span class="campo__caja"><i class="i">lock</i><input type="password" value="balto12345" autocomplete="new-password"></span>
+    </label>
+    <label class="campo">
+      <span class="campo__etiqueta">Confirmar contraseña</span>
+      <span class="campo__caja"><i class="i">lock</i><input type="password" value="balto12345" autocomplete="new-password"></span>
+    </label>
+    <div class="fila-opcion marcada" data-borde-marcado>
+      <p class="fila-opcion__texto">Acepto los términos y la política de datos</p>
+      <i class="i casilla">check_box</i>
+    </div>
+    <div class="enlace"><a href="a6-inicio-de-sesion.html">¿Ya tienes cuenta? Inicia sesión</a></div>
+  </form>
+  <div class="barra-estado"><span class="hora">9:41</span><span class="indicadores"><i class="i">signal_cellular_alt</i><i class="i">wifi</i><i class="i">battery_full</i></span></div>
+  <a class="boton" href="a4-verificar-correo.html" style="position: absolute; left: 24px; top: 771px; width: 342px;">Continuar<i class="i">arrow_forward</i></a>
+</main>
+</div></div>
+<script src="../js/app.js"></script>
+</body>
+</html>

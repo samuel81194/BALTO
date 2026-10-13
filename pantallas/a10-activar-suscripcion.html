@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>A10 · Activar suscripción · Balto</title>
+<link rel="stylesheet" href="../css/balto.css">
+</head>
+<body>
+<div class="escenario"><div class="dispositivo">
+<main class="pantalla">
+  <div class="contenido">
+    <div class="encabezado">
+      <span class="espacio"></span>
+      <h1 class="encabezado__titulo">Suscripción</h1>
+      <a class="boton-icono" href="a11-modo-consulta.html" aria-label="Cerrar"><i class="i">close</i></a>
+    </div>
+    <div style="display: flex; flex-direction: column; gap: 6px; overflow: hidden;">
+      <p class="t-t1 c-900">Tu prueba gratis terminó</p>
+      <p class="t-cuerpo c-500">Activa el plan para seguir registrando y compartiendo.</p>
+    </div>
+    <div class="plan">
+      <p class="t-micro c-a3 nowrap">PLAN COMPLETO</p>
+      <p class="t-t1 c-0 nowrap">$ 00.000 / mes</p>
+      <div class="plan__beneficio"><i class="i">check_circle</i><p>Mascotas ilimitadas</p></div>
+      <div class="plan__beneficio"><i class="i">check_circle</i><p>Línea de tiempo con soportes</p></div>
+      <div class="plan__beneficio"><i class="i">check_circle</i><p>Alertas de vencimiento</p></div>
+      <div class="plan__beneficio"><i class="i">check_circle</i><p>Reportes PDF para compartir</p></div>
+    </div>
+    <div class="lista" id="metodo" data-radio>
+      <div class="fila seleccionada" data-destino="a18-datos-de-la-tarjeta.html">
+        <span class="fila__icono"><i class="i">credit_card</i></span>
+        <span class="fila__textos"><span class="fila__titulo">Tarjeta débito o crédito</span></span>
+        <i class="i radio-marca">radio_button_checked</i>
+      </div>
+      <div class="fila" data-destino="a19-pago-con-pse.html">
+        <span class="fila__icono"><i class="i">account_balance</i></span>
+        <span class="fila__textos"><span class="fila__titulo">PSE</span></span>
+        <i class="i radio-marca">radio_button_unchecked</i>
+      </div>
+    </div>
+  </div>
+  <div class="barra-estado"><span class="hora">9:41</span><span class="indicadores"><i class="i">signal_cellular_alt</i><i class="i">wifi</i><i class="i">battery_full</i></span></div>
+  <a class="boton" href="a18-datos-de-la-tarjeta.html" data-ir-opcion="metodo" style="position: absolute; left: 24px; top: 771px; width: 342px;">Activar suscripción<i class="i">arrow_forward</i></a>
+</main>
+</div></div>
+<script src="../js/app.js"></script>
+</body>
+</html>

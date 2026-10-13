@@ -1,0 +1,562 @@
+/* =========================================================================
+   Balto · Prototipo móvil
+   Sistema de diseño extraído del Figma (tokens, tipografía y componentes).
+   Lienzo de diseño: 390 × 844 px. El dispositivo se escala para encajar en
+   la pantalla real (p. ej. 380 × 820) sin perder fidelidad.
+   ========================================================================= */
+
+@import url("https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20..48,400,0..1,0&display=block");
+
+/* ---------- Tokens ---------- */
+:root {
+  --primario-900: #2e5955;
+  --primario-800: #2f5f5f;
+  --acento-100: #dce2e5;
+  --acento-300: #c7d0d5;
+  --acento-400: #ecd3ab;
+  --neutro-0: #ffffff;
+  --neutro-50: #f2f2f2;
+  --neutro-500: #77737f;
+  --neutro-900: #262626;
+  --f9: rgba(249, 249, 249, 0.7);
+  --borde-suave: #dce2e5;
+  --error: #c8475b;
+
+  --sombra-suave: 0 8px 24px rgba(78, 69, 140, 0.1);
+  --sombra-flotante: 0 12px 32px rgba(24, 13, 8, 0.22);
+
+  --f-titulo: "Outfit", system-ui, sans-serif;
+  --f-cuerpo: "Plus Jakarta Sans", system-ui, sans-serif;
+
+  --escala: 1;
+}
+
+/* Tema "Verde y arena" (pantalla de inicio) */
+.tema-arena {
+  --neutro-900: #180d08;
+  --neutro-500: #6a797a;
+}
+
+/* ---------- Reset ---------- */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html, body { height: 100%; }
+body {
+  font-family: var(--f-cuerpo);
+  color: var(--neutro-900);
+  background: #e7ebed;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-tap-highlight-color: transparent;
+  overflow: hidden;
+}
+a { color: inherit; text-decoration: none; }
+button { font: inherit; color: inherit; background: none; border: 0; cursor: pointer; }
+input, textarea, select { font: inherit; color: inherit; }
+img { display: block; max-width: none; }
+p { overflow-wrap: break-word; }
+
+/* ---------- Dispositivo ---------- */
+.escenario {
+  position: fixed; inset: 0;
+  display: flex; align-items: center; justify-content: center;
+}
+.dispositivo {
+  position: relative;
+  width: 390px; height: 844px;
+  flex-shrink: 0;
+  zoom: var(--escala);
+  background: #fff;
+  border-radius: 44px;
+  overflow: hidden;
+  box-shadow: 0 30px 80px rgba(24, 13, 8, 0.18), 0 0 0 10px #1d1d1f, 0 0 0 11px #3a3a3c;
+  isolation: isolate;
+}
+.es-movil body { background: #fff; }
+.es-movil .dispositivo { border-radius: 0; box-shadow: none; }
+
+.pantalla {
+  position: absolute; inset: 0;
+  overflow: hidden;
+  background: var(--fondo, var(--f9));
+}
+
+/* Zona desplazable: para pantallas cuyo contenido supera el alto del lienzo */
+.desplazable {
+  position: absolute; inset: 0;
+  overflow-y: auto; overflow-x: hidden;
+  scrollbar-width: none;
+}
+.desplazable::-webkit-scrollbar { display: none; }
+
+/* Columna de contenido estándar del Figma ("Contenido") */
+.contenido {
+  position: absolute; top: 58px; left: 0;
+  width: 390px;
+  padding: 0 24px;
+  display: flex; flex-direction: column; align-items: stretch;
+  gap: var(--gap, 16px);
+}
+.desplazable > .contenido { position: relative; top: auto; margin-top: 58px; padding-bottom: var(--pie, 24px); }
+.contenido > * { flex-shrink: 0; }
+.ajustado { align-self: flex-start; }
+.centrado { align-self: center; }
+
+/* ---------- Tipografía ---------- */
+.t-display  { font: 600 40px/44px var(--f-titulo); letter-spacing: -0.8px; }
+.t-t1       { font: 600 28px/34px var(--f-titulo); letter-spacing: -0.28px; }
+.t-t2       { font: 600 22px/28px var(--f-titulo); letter-spacing: -0.11px; }
+.t-t3       { font: 500 18px/24px var(--f-titulo); }
+.t-cuerpo   { font: 400 15px/22px var(--f-cuerpo); }
+.t-cuerpo-f { font: 600 15px/22px var(--f-cuerpo); }
+.t-etiqueta { font: 600 13px/16px var(--f-cuerpo); }
+.t-pequeno  { font: 400 13px/18px var(--f-cuerpo); }
+.t-micro    { font: 500 11px/14px var(--f-cuerpo); letter-spacing: 0.055px; }
+.t-boton    { font: 700 16px/20px var(--f-cuerpo); }
+
+.c-900 { color: var(--neutro-900); }
+.c-500 { color: var(--neutro-500); }
+.c-p9  { color: var(--primario-900); }
+.c-p8  { color: var(--primario-800); }
+.c-0   { color: var(--neutro-0); }
+.c-a3  { color: var(--acento-300); }
+.nowrap { white-space: nowrap; }
+.tc { text-align: center; }
+
+/* ---------- Íconos (Material Symbols Rounded) ---------- */
+.i {
+  font-family: "Material Symbols Rounded";
+  font-weight: 400; font-style: normal;
+  font-size: 24px; line-height: 24px;
+  letter-spacing: normal; text-transform: none;
+  display: inline-block; white-space: nowrap; direction: ltr;
+  font-feature-settings: "liga"; -webkit-font-feature-settings: "liga";
+  font-variation-settings: "FILL" 0, "GRAD" 0;
+  flex-shrink: 0;
+  user-select: none;
+}
+.i.lleno { font-variation-settings: "FILL" 1, "GRAD" 0; }
+.i14 { font-size: 14px; line-height: 14px; }
+.i16 { font-size: 16px; line-height: 16px; }
+.i18 { font-size: 18px; line-height: 18px; }
+.i20 { font-size: 20px; line-height: 20px; }
+.i22 { font-size: 22px; line-height: 22px; }
+.i24 { font-size: 24px; line-height: 24px; }
+.i28 { font-size: 28px; line-height: 28px; }
+.i30 { font-size: 30px; line-height: 30px; }
+.i32 { font-size: 32px; line-height: 32px; }
+.i40 { font-size: 40px; line-height: 40px; }
+.i48 { font-size: 48px; line-height: 48px; }
+
+/* ---------- Barra de estado ---------- */
+.barra-estado {
+  position: absolute; top: 0; left: 0; z-index: 40;
+  width: 390px; height: 50px;
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 12px 28px 0 32px;
+  color: var(--neutro-900);
+  white-space: nowrap;
+  pointer-events: none;
+}
+.barra-estado .hora { font: 600 15px/22px var(--f-cuerpo); }
+.barra-estado .indicadores { display: flex; gap: 4px; align-items: flex-start; overflow: hidden; }
+.barra-estado .indicadores .i { font-size: 18px; line-height: 18px; }
+.barra-estado.clara { color: var(--neutro-0); }
+
+/* ---------- Encabezado ---------- */
+.encabezado {
+  display: flex; align-items: center; justify-content: space-between;
+  overflow: hidden;
+}
+.encabezado__titulo { font: 500 18px/24px var(--f-titulo); color: var(--neutro-900); white-space: nowrap; }
+.espacio { width: 44px; height: 44px; flex-shrink: 0; }
+
+/* ---------- Botón ícono (44 px) ---------- */
+.boton-icono {
+  width: 44px; height: 44px; flex-shrink: 0;
+  border-radius: 22px;
+  display: flex; align-items: center; justify-content: center;
+  background: var(--neutro-0);
+  border: 1px solid var(--borde-suave);
+  color: var(--neutro-900);
+  cursor: pointer;
+}
+.boton-icono .i { font-size: 22px; line-height: 22px; }
+.boton-icono.primario { background: var(--primario-900); border: 0; color: var(--neutro-0); }
+.boton-icono.oscuro { background: var(--neutro-900); border: 0; color: var(--neutro-0); }
+
+/* ---------- Botón (píldora 56 px) ---------- */
+.boton {
+  display: flex; align-items: center; justify-content: center; gap: 10px;
+  height: 56px; padding: 0 28px;
+  border-radius: 28px;
+  font: 700 16px/20px var(--f-cuerpo);
+  white-space: nowrap;
+  background: var(--primario-800);
+  color: var(--neutro-0);
+  cursor: pointer;
+  transition: transform .12s ease, filter .12s ease;
+}
+.boton .i { font-size: 20px; line-height: 20px; }
+.boton:active, .boton-icono:active, .pulsable:active { transform: scale(0.98); filter: brightness(0.96); }
+.boton.texto-f9 { color: var(--f9); }
+.boton.suave { background: var(--acento-300); color: var(--primario-900); }
+
+/* ---------- Barra de acción inferior ---------- */
+.barra-accion {
+  position: absolute; left: 0; bottom: 0; z-index: 20;
+  width: 390px; height: 108px;
+  display: flex; align-items: flex-start; gap: var(--gap, 10px);
+  padding: 16px 24px 0;
+  background: var(--f9);
+  border-radius: 28px 28px 0 0;
+  overflow: hidden;
+}
+.barra-accion > .boton { flex: 1 0 0; min-width: 1px; }
+
+/* ---------- Progreso por pasos ---------- */
+.progreso { display: flex; flex-direction: column; gap: 8px; overflow: hidden; }
+.progreso__texto { font: 500 11px/14px var(--f-cuerpo); letter-spacing: 0.055px; color: var(--primario-900); white-space: nowrap; }
+.progreso__barras { display: flex; gap: 6px; }
+.progreso__barras > span { flex: 1 0 0; min-width: 1px; height: 6px; border-radius: 3px; background: var(--acento-300); }
+.progreso__barras > span.hecho { background: var(--primario-900); }
+
+/* ---------- Selector segmentado ---------- */
+.selector {
+  display: flex; align-items: flex-start;
+  padding: 4px; border-radius: 24px;
+  background: var(--acento-100);
+  overflow: hidden;
+}
+.selector > button {
+  flex: 1 0 0; min-width: 1px;
+  display: flex; align-items: center; justify-content: center;
+  padding: 10px 0; border-radius: 20px;
+  font: 600 13px/16px var(--f-cuerpo);
+  color: var(--neutro-500);
+  white-space: nowrap;
+  transition: background .15s ease, box-shadow .15s ease, color .15s ease;
+}
+.selector > button.activo { background: var(--neutro-0); color: var(--neutro-900); box-shadow: var(--sombra-suave); }
+
+/* ---------- Campo de formulario ---------- */
+.campo { display: flex; flex-direction: column; align-items: flex-start; gap: 8px; }
+.campo__etiqueta { font: 600 13px/16px var(--f-cuerpo); color: var(--neutro-900); white-space: nowrap; }
+.campo__caja {
+  width: 100%; height: 56px; flex-shrink: 0;
+  display: flex; align-items: center; gap: 12px;
+  padding: 0 16px;
+  border-radius: 18px;
+  background: var(--neutro-0);
+  border: 1px solid var(--acento-300);
+  overflow: hidden;
+  cursor: text;
+}
+.campo__caja > .i { font-size: 22px; line-height: 22px; color: var(--neutro-500); }
+.campo__caja > .i.final { font-size: 20px; line-height: 20px; color: var(--acento-300); }
+.campo__caja input, .campo__caja .valor {
+  flex: 1 0 0; min-width: 1px;
+  font: 400 15px/22px var(--f-cuerpo);
+  color: var(--neutro-900);
+  background: none; border: 0; outline: none; padding: 0;
+  height: 22px;
+}
+.campo__caja input::placeholder { color: var(--neutro-500); opacity: 1; }
+.campo.foco .campo__caja, .campo__caja:focus-within { border: 2px solid var(--primario-800); }
+.campo.foco .campo__caja > .i:not(.final), .campo__caja:focus-within > .i:not(.final) { color: var(--primario-900); }
+.campo.error .campo__caja { border: 1.5px solid var(--error); }
+.campo.error .campo__caja > .i:not(.final) { color: var(--neutro-500); }
+.campo.error .campo__caja > .i.final { color: var(--error); }
+.campo__ayuda { font: 400 13px/18px var(--f-cuerpo); color: var(--neutro-500); white-space: nowrap; }
+.campo.error .campo__ayuda { color: var(--error); }
+
+/* ---------- Fila con interruptor / casilla ---------- */
+.fila-opcion {
+  display: flex; align-items: center; gap: 12px;
+  padding: 12px 14px; border-radius: 20px;
+  background: var(--neutro-0);
+  overflow: hidden;
+  cursor: pointer;
+}
+.fila-opcion__texto { flex: 1 0 0; min-width: 1px; font: 600 15px/22px var(--f-cuerpo); color: var(--neutro-900); }
+.fila-opcion.marcada { border: 1.5px solid var(--primario-900); }
+.fila-opcion > .i { font-size: 22px; line-height: 22px; color: var(--primario-900); }
+
+/* ---------- Interruptor ---------- */
+.interruptor {
+  position: relative; flex-shrink: 0;
+  width: 52px; height: 32px; border-radius: 16px;
+  background: var(--acento-300);
+  cursor: pointer;
+  transition: background .18s ease;
+}
+.interruptor::after {
+  content: ""; position: absolute; top: 4px; left: 4px;
+  width: 24px; height: 24px; border-radius: 50%;
+  background: var(--neutro-0);
+  transition: transform .18s ease;
+}
+.interruptor.encendido { background: var(--primario-800); }
+.interruptor.encendido::after { transform: translateX(20px); }
+
+/* ---------- Enlace centrado ---------- */
+.enlace { display: flex; justify-content: center; overflow: hidden; }
+.enlace > a, .enlace > span { font: 600 13px/16px var(--f-cuerpo); color: var(--primario-900); white-space: nowrap; cursor: pointer; }
+
+/* ---------- Indicador de carrusel ---------- */
+.puntos { display: flex; gap: 6px; align-items: flex-start; overflow: hidden; }
+.puntos > span { width: 8px; height: 8px; border-radius: 4px; background: var(--acento-300); }
+.puntos > span.activo { width: 24px; background: var(--primario-900); }
+
+/* ---------- Foto de mascota (marcador) ---------- */
+.foto-mascota {
+  position: relative; flex-shrink: 0;
+  overflow: hidden;
+  background-image: linear-gradient(135deg, var(--acento-300) 0%, var(--fm-fin, var(--primario-800)) 71.429%);
+  background-size: cover; background-position: center;
+}
+.foto-mascota::before {
+  content: ""; position: absolute; inset: 15.63%;
+  border-radius: 50%; background: rgba(255, 255, 255, 0.2);
+}
+.foto-mascota > .i { position: absolute; inset: 30%; color: var(--neutro-0); display: flex; align-items: center; justify-content: center; }
+
+/* ---------- Rasgo ---------- */
+.rasgo {
+  width: 76px; height: 76px; flex-shrink: 0;
+  display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 6px;
+  border-radius: 22px;
+  white-space: nowrap;
+}
+.rasgo > .i { font-size: 24px; line-height: 24px; }
+.rasgo > span:last-child { font: 700 11px/14px var(--f-cuerpo); letter-spacing: 0.055px; }
+
+/* ---------- Navegación inferior ---------- */
+.nav-inferior {
+  position: absolute; left: 16px; bottom: 22px; z-index: 30;
+  width: 358px; height: 72px;
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 0 12px;
+  border-radius: 36px;
+  background: var(--neutro-900);
+  filter: drop-shadow(0 12px 16px rgba(24, 13, 8, 0.22));
+}
+.nav-inferior > a {
+  width: 48px; height: 48px; border-radius: 24px;
+  display: flex; align-items: center; justify-content: center;
+  color: var(--neutro-0); overflow: hidden;
+}
+.nav-inferior > a .i { font-size: 24px; line-height: 24px; }
+.nav-inferior > a.activo { background: var(--primario-800); }
+.nav-inferior > a.registrar { width: 52px; height: 52px; border-radius: 26px; background: var(--neutro-0); color: var(--primario-900); }
+.nav-inferior > a.registrar .i { font-size: 28px; line-height: 28px; }
+
+/* ---------- Utilidades de interacción ---------- */
+[data-ir], [data-volver], .pulsable { cursor: pointer; }
+.oculto { display: none !important; }
+
+/* Transición de entrada entre pantallas */
+@media (prefers-reduced-motion: no-preference) {
+  .pantalla { animation: entrar .22s ease-out both; }
+  @keyframes entrar { from { opacity: 0; transform: translateX(10px); } to { opacity: 1; transform: none; } }
+}
+
+/* ---------- Barra de presentación (solo escritorio) ---------- */
+.presentacion {
+  position: fixed; top: 16px; left: 16px; z-index: 100;
+  display: flex; align-items: center; gap: 8px;
+  font: 600 13px/16px var(--f-cuerpo); color: #262626;
+}
+.presentacion a, .presentacion span {
+  display: inline-flex; align-items: center; gap: 6px;
+  padding: 8px 14px; border-radius: 20px;
+  background: rgba(255, 255, 255, 0.85);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+.presentacion .i { font-size: 18px; line-height: 18px; }
+.es-movil .presentacion { display: none; }
+
+/* ---------- Bloque de estado (ícono grande + título + texto) ---------- */
+.estado { display: flex; flex-direction: column; align-items: center; gap: 14px; overflow: hidden; text-align: center; }
+.contenedor-icono {
+  flex-shrink: 0; overflow: hidden;
+  display: flex; align-items: center; justify-content: center;
+  background: var(--acento-100); color: var(--primario-900);
+}
+.contenedor-icono.c104 { width: 104px; height: 104px; border-radius: 52px; }
+.contenedor-icono.c104 > .i { font-size: 48px; line-height: 48px; }
+
+/* ---------- Nota informativa ---------- */
+.nota {
+  display: flex; align-items: center; gap: 10px;
+  padding: 12px 14px; border-radius: 18px;
+  background: var(--acento-100);
+  overflow: hidden;
+}
+.nota > .i { font-size: 20px; line-height: 20px; color: var(--primario-900); }
+.nota > p { flex: 1 0 0; min-width: 1px; font: 400 13px/18px var(--f-cuerpo); color: var(--neutro-900); }
+
+/* ---------- Código de verificación ---------- */
+.digitos { display: flex; gap: 10px; justify-content: center; overflow: hidden; }
+.digito {
+  width: 48px; height: 58px; flex-shrink: 0;
+  display: flex; align-items: center; justify-content: center;
+  border-radius: 16px; background: var(--neutro-0);
+  border: 1px solid var(--acento-100);
+  overflow: hidden;
+}
+.digito input {
+  width: 100%; height: 28px; text-align: center;
+  font: 600 22px/28px var(--f-titulo); letter-spacing: -0.11px; color: var(--neutro-900);
+  border: 0; background: none; outline: none; padding: 0;
+  caret-color: var(--primario-900);
+}
+.digito.foco, .digito:focus-within { border: 2px solid var(--primario-900); }
+
+/* ---------- Enlaces de texto ---------- */
+.vinculo { font: 600 13px/16px var(--f-cuerpo); color: var(--primario-900); white-space: nowrap; cursor: pointer; }
+
+/* ---------- Chip ---------- */
+.chip {
+  display: inline-flex; align-items: center; gap: 6px; flex-shrink: 0;
+  padding: 10px 16px 10px 14px; border-radius: 20px;
+  font: 600 13px/16px var(--f-cuerpo); color: var(--neutro-900);
+  white-space: nowrap;
+  background: var(--neutro-0); border: 1px solid var(--acento-100);
+  cursor: pointer;
+  transition: background .15s ease, color .15s ease;
+}
+.chip > .i { font-size: 18px; line-height: 18px; color: var(--primario-900); }
+.chip.activo { background: var(--primario-800); border: 0; color: var(--neutro-0); }
+.chip.activo > .i { color: #beb6f2; }
+.chip.requisito { background: none; border: 0; cursor: default; }
+.chip.requisito > .i { font-size: 24px; line-height: 18px; color: var(--primario-800); }
+.chip.requisito > .i.no { color: var(--error); }
+.cuadricula { display: flex; flex-wrap: wrap; gap: 8px; align-content: flex-start; overflow: hidden; }
+.cuadricula.columna { flex-direction: column; flex-wrap: wrap; align-items: flex-start; }
+
+/* ---------- Botón: variantes ---------- */
+.boton.secundario { background: none; border: 1.5px solid var(--primario-800); color: var(--primario-800); }
+.boton.secundario .i { color: var(--primario-900); }
+
+/* ---------- Fila de lista (ícono + textos + acción) ---------- */
+.lista { display: flex; flex-direction: column; gap: 10px; overflow: hidden; }
+.fila {
+  display: flex; align-items: center; gap: 12px;
+  padding: 12px 14px; border-radius: 20px;
+  background: var(--neutro-0);
+  overflow: hidden;
+}
+.fila.borde { border: 1px solid var(--acento-300); }
+.fila.seleccionada { border: 1.5px solid var(--primario-900); }
+.fila__icono {
+  width: 40px; height: 40px; border-radius: 14px; flex-shrink: 0;
+  display: flex; align-items: center; justify-content: center;
+  background: var(--acento-100); color: var(--primario-900); overflow: hidden;
+}
+.fila__icono > .i { font-size: 20px; line-height: 20px; }
+.fila__textos { flex: 1 0 0; min-width: 1px; display: flex; flex-direction: column; align-items: flex-start; overflow: hidden; }
+.fila__titulo { font: 600 15px/22px var(--f-cuerpo); color: var(--neutro-900); width: 100%; }
+.fila__sub { font: 400 13px/18px var(--f-cuerpo); color: var(--neutro-500); width: 100%; }
+.fila > .i { font-size: 22px; line-height: 22px; color: var(--neutro-500); }
+
+/* Opciones tipo radio */
+[data-radio] > * { cursor: pointer; }
+.radio-marca { color: var(--neutro-500); }
+.seleccionada .radio-marca { color: var(--primario-900); }
+
+/* ---------- Tarjeta de plan ---------- */
+.plan {
+  display: flex; flex-direction: column; align-items: flex-start; gap: 14px;
+  padding: 22px; border-radius: 28px;
+  background: var(--primario-900); overflow: hidden;
+}
+.plan__beneficio { display: flex; align-items: center; gap: 10px; width: 100%; overflow: hidden; }
+.plan__beneficio > .i { font-size: 20px; line-height: 20px; color: var(--primario-800); }
+.plan__beneficio > p { flex: 1 0 0; min-width: 1px; font: 400 13px/18px var(--f-cuerpo); color: var(--neutro-0); }
+
+/* Variante del bloque de estado usada en pantallas de resultado:
+   cajas de texto de alto fijo (24 px) como en el Figma. */
+.estado.compacto { gap: 16px; padding-top: 16px; }
+.estado.compacto > p { height: 24px; width: 342px; }
+.contenedor-icono.cuadrado { border-radius: 32px; }
+.contenedor-icono.error { color: var(--error); }
+.nota.amplia { gap: 12px; padding: 14px 16px; border-radius: 20px; }
+.nota.amplia > p { height: 24px; }
+.nota > .i.error { color: var(--error); }
+.barra-accion.transparente { background: none; border-radius: 0; }
+.rasgo.claro { background: var(--acento-300); }
+.rasgo.claro > .i { color: var(--primario-900); }
+.rasgo.claro > span:last-child { font-weight: 500; color: var(--primario-800); }
+.rasgo.oscuro { background: var(--neutro-500); color: var(--neutro-0); }
+.rasgos { display: flex; gap: 8px; align-items: flex-start; overflow: hidden; }
+
+/* Campos en dos columnas */
+.campos { display: flex; gap: 12px; align-items: flex-start; overflow: hidden; }
+.campos > .campo { flex: 1 0 0; min-width: 1px; }
+
+/* Tarjeta blanca con borde suave */
+.tarjeta {
+  display: flex; flex-direction: column; align-items: flex-start;
+  background: var(--neutro-0); border: 1px solid var(--acento-100);
+  overflow: hidden;
+}
+/* Fila con borde suave y dos líneas de alto fijo (A19, etc.) */
+.fila.suave { border: 1px solid var(--acento-100); padding: 13px 15px; }
+.fila.suave .fila__textos { gap: 2px; }
+.fila.suave .fila__titulo, .fila.suave .fila__sub { height: 24px; }
+
+/* ---------- Indicador de notificación (punto) ---------- */
+.punto-aviso {
+  position: absolute; width: 12px; height: 12px; border-radius: 50%;
+  background: var(--primario-900); border: 2px solid var(--neutro-0);
+}
+
+/* ---------- Fila horizontal desplazable que llega al borde del lienzo ---------- */
+.carril {
+  display: flex; gap: 10px; align-items: flex-start;
+  margin-right: -24px; padding-right: 24px;
+  overflow-x: auto; overflow-y: hidden;
+  scrollbar-width: none;
+}
+.carril::-webkit-scrollbar { display: none; }
+.carril > * { flex-shrink: 0; }
+
+/* ---------- Píldora de mascota (selector) ---------- */
+.pildora-mascota {
+  display: flex; align-items: center; gap: 8px;
+  padding: 6px 16px 6px 6px; border-radius: 26px;
+  background: var(--neutro-0); color: var(--neutro-900);
+  font: 600 13px/16px var(--f-cuerpo); white-space: nowrap;
+  overflow: hidden; cursor: pointer;
+  transition: background .15s ease, color .15s ease;
+}
+.pildora-mascota.activo { background: var(--neutro-900); color: var(--neutro-0); }
+.foto-mascota.f36 { width: 36px; height: 36px; border-radius: 18px; }
+.foto-mascota.f36 > .i { font-size: 14.4px; line-height: 14.4px; }
+
+/* Foto elegida por el usuario (reemplaza el marcador) */
+.foto-mascota.con-foto::before, .foto-mascota.con-foto > .i { display: none; }
+.foto-mascota.f200 { width: 200px; height: 200px; border-radius: 48px; --fm-fin: #2e5955; }
+.foto-mascota.f200 > .i { font-size: 80px; line-height: 80px; }
+
+/* ---------- Diálogo modal ---------- */
+.velo { position: absolute; inset: 0; z-index: 60; background: rgba(23, 13, 8, 0.55); }
+.dialogo {
+  position: absolute; z-index: 61; left: 28px; width: 334px;
+  display: flex; flex-direction: column; align-items: center; gap: 22px;
+  padding: 28px 24px 24px; border-radius: 32px;
+  background: var(--neutro-0); overflow: hidden; text-align: center;
+}
+.dialogo > .boton { width: 100%; flex-shrink: 0; }
+.dialogo > p { width: 286px; height: 24px; flex-shrink: 0; }
+.contenedor-icono.c64 { width: 64px; height: 64px; border-radius: 22px; }
+.contenedor-icono.c64 > .i { font-size: 30px; line-height: 30px; }
+
+/* ---------- Marcador de imagen (placeholder) ---------- */
+.marcador {
+  display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 8px;
+  border-radius: 24px; background: var(--acento-100); overflow: hidden; white-space: nowrap;
+}
+.marcador > .i { font-size: 32px; line-height: 32px; color: var(--primario-900); }
+.marcador > span { font: 600 13px/16px var(--f-cuerpo); color: var(--neutro-500); }

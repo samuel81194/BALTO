@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>B9 · Identificador duplicado · Balto</title>
+<link rel="stylesheet" href="../css/balto.css">
+</head>
+<body>
+<div class="escenario"><div class="dispositivo">
+<main class="pantalla">
+  <div class="barra-estado"><span class="hora">9:41</span><span class="indicadores"><i class="i">signal_cellular_alt</i><i class="i">wifi</i><i class="i">battery_full</i></span></div>
+  <div class="contenido" style="overflow: hidden;">
+    <div class="encabezado">
+      <a class="boton-icono" href="b3-identificador.html" data-volver aria-label="Volver"><i class="i">arrow_back</i></a>
+      <h1 class="encabezado__titulo" style="color: #180d08">Nueva mascota</h1>
+      <span class="espacio"></span>
+    </div>
+    <div class="progreso">
+      <p class="progreso__texto" style="height: 24px;">PASO 3 DE 4 · IDENTIFICACIÓN</p>
+      <div class="progreso__barras"><span class="hecho"></span><span class="hecho"></span><span class="hecho"></span><span></span></div>
+    </div>
+    <p class="t-t2" style="height: 24px; color: #180d08;">Este número ya está en uso</p>
+    <label class="campo error">
+      <span class="campo__etiqueta">Número de microchip</span>
+      <span class="campo__caja"><i class="i">pin</i><input inputmode="numeric" value="985 112 000 123 456"></span>
+      <span class="campo__ayuda">Ya hay otra mascota registrada con este número</span>
+    </label>
+    <div class="tema-arena" style="display: flex; flex-direction: column; gap: 16px;">
+      <div class="nota amplia"><i class="i error">info</i><p>Si es la misma mascota, búscala en Mis mascotas. Si te equivocaste, corrige el número.</p></div>
+      <div class="lista" style="gap: 0;">
+        <a class="fila suave" href="m5-administrar-mascotas.html">
+          <span class="fila__icono"><i class="i">pets</i></span>
+          <span class="fila__textos"><span class="fila__titulo">Ver mis mascotas</span><span class="fila__sub">3 registradas</span></span>
+          <i class="i">chevron_right</i>
+        </a>
+      </div>
+    </div>
+  </div>
+  <div class="barra-accion transparente">
+    <a class="boton" href="b3-identificador.html">Corregir el número</a>
+    <a class="boton secundario" href="b4-salud-inicial.html">Omitir identificador</a>
+  </div>
+</main>
+</div></div>
+<script src="../js/app.js"></script>
+</body>
+</html>
