@@ -137,7 +137,17 @@
 
     /* Quitar un elemento (archivo adjunto, etc.) */
     el = e.target.closest("[data-quitar]");
-    if (el) { e.preventDefault(); var q = el.closest(el.getAttribute("data-quitar") || ".fila"); if (q) q.remove(); return; }
+    if (el) {
+      e.preventDefault();
+      var q = el.closest(el.getAttribute("data-quitar") || ".fila");
+      if (q) {
+        var padre = q.parentNode;
+        q.remove();
+        /* Lista que, al quedar vacía, lleva a otra pantalla (p. ej. carrito vacío) */
+        if (padre && padre.hasAttribute("data-si-vacio") && !padre.children.length) ir(padre.getAttribute("data-si-vacio"));
+      }
+      return;
+    }
 
     el = e.target.closest(".casilla");
     if (el) { alternarCasilla(el); return; }
@@ -372,6 +382,15 @@
       ir(zona.getAttribute(dx < 0 ? "data-deslizar-siguiente" : "data-deslizar-anterior"));
     });
   }
+
+  /* Contador genérico: [data-contador] con botones [data-paso] y un [data-valor] */
+  document.addEventListener("click", function (e) {
+    var b = e.target.closest("[data-contador] [data-paso]");
+    if (!b) return;
+    var c = b.closest("[data-contador]"), out = c.querySelector("[data-valor]");
+    var min = Number(c.getAttribute("data-min") || 0), max = Number(c.getAttribute("data-max") || 99);
+    out.textContent = Math.min(max, Math.max(min, Number(out.textContent) + Number(b.getAttribute("data-paso"))));
+  });
 
   /* ---------- Barra de presentación (escritorio) ---------- */
   function montarPresentacion() {
