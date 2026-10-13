@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>E2 · Registrar vacuna · Balto</title>
+<link rel="stylesheet" href="../css/balto.css">
+</head>
+<body>
+<div class="escenario"><div class="dispositivo">
+<main class="pantalla">
+  <form id="formulario" class="contenido" data-exito="e9-evento-guardado.html" onsubmit="return false">
+    <div class="encabezado">
+      <a class="boton-icono" href="e1-selector-de-tipo-de-evento.html" data-volver aria-label="Cerrar"><i class="i">close</i></a>
+      <h1 class="encabezado__titulo">Registrar evento</h1>
+      <a class="mascota-pildora" href="m5-administrar-mascotas.html"><span class="foto-mascota f34"><i class="i">pets</i></span>Luna<i class="i">expand_more</i></a>
+    </div>
+    <p class="t-etiqueta c-900 nowrap">¿Qué quieres registrar?</p>
+    <div class="carril" style="gap: 8px;">
+      <span class="chip activo"><i class="i">vaccines</i>Vacuna</span>
+      <a class="chip" href="e10-registrar-desparasitacion.html"><i class="i">pest_control</i>Desparasitación</a>
+      <a class="chip" href="e3-consulta-veterinaria.html"><i class="i">stethoscope</i>Consulta</a>
+      <a class="chip" href="e4-examen-o-laboratorio.html"><i class="i">labs</i>Examen</a>
+      <a class="chip" href="e5-tratamiento-o-medicacion.html"><i class="i">medication</i>Tratamiento</a>
+      <a class="chip" href="e6-peso.html"><i class="i">monitor_weight</i>Peso</a>
+    </div>
+    <div class="formulario">
+      <div style="display: flex; flex-direction: column; gap: 2px; white-space: nowrap; overflow: hidden;">
+        <p class="t-t2 c-900">Vacuna</p>
+        <p class="t-micro c-500">Los campos con * son obligatorios</p>
+      </div>
+      <label class="campo foco">
+        <span class="campo__etiqueta">Vacuna aplicada *</span>
+        <span class="campo__caja"><i class="i">vaccines</i><input value="Antirrábica · Nobivac Rabies" required></span>
+      </label>
+      <div class="campos">
+        <label class="campo">
+          <span class="campo__etiqueta">Fecha aplicada *</span>
+          <span class="campo__caja"><input inputmode="numeric" value="12/09/2026" required></span>
+        </label>
+        <label class="campo">
+          <span class="campo__etiqueta">Próximo refuerzo</span>
+          <span class="campo__caja"><input inputmode="numeric" value="12/09/2027"></span>
+        </label>
+      </div>
+      <div style="display: flex; flex-direction: column; gap: 8px; overflow: hidden;">
+        <p class="t-etiqueta c-900 nowrap">Soporte · foto del carnet o PDF</p>
+        <div class="adjunto">
+          <span class="adjunto__icono"><i class="i">image</i></span>
+          <span class="adjunto__textos"><span class="t-etiqueta c-900">carnet_luna.jpg</span><span class="t-micro c-500">Foto · 1,2 MB · Cargado</span></span>
+          <i class="i" data-quitar=".adjunto" aria-label="Quitar">close</i>
+        </div>
+        <div style="display: flex; gap: 8px; overflow: hidden;">
+          <label class="chip"><i class="i">photo_camera</i>Cámara<input type="file" accept="image/*" capture="environment" data-ir-tras="e12-revisar-la-foto.html" data-error-archivo="e13-archivo-muy-pesado.html" hidden></label>
+          <label class="chip"><i class="i">photo_library</i>Galería<input type="file" accept="image/*" data-ir-tras="e12-revisar-la-foto.html" data-error-archivo="e13-archivo-muy-pesado.html" hidden></label>
+          <label class="chip"><i class="i">picture_as_pdf</i>PDF<input type="file" accept="application/pdf" data-ir-tras="e8-adjuntar-soporte.html" data-error-archivo="e13-archivo-muy-pesado.html" hidden></label>
+        </div>
+      </div>
+      <div class="fila-aviso">
+        <span class="fila-aviso__icono"><i class="i">notifications_active</i></span>
+        <span class="fila-aviso__textos"><span class="t-cuerpo-f c-900">Recordarme el refuerzo</span><span class="t-pequeno c-500 nowrap">7 días antes · 5 sep 2027</span></span>
+        <span class="interruptor encendido" role="switch" aria-checked="true" aria-label="Recordarme el refuerzo"></span>
+      </div>
+    </div>
+  </form>
+  <div class="barra-accion sombra" style="height: 110px; bottom: 0;">
+    <a class="boton texto-f9" href="e9-evento-guardado.html" data-enviar="formulario">Guardar evento<i class="i">check</i></a>
+  </div>
+  <div class="barra-estado"><span class="hora">9:41</span><span class="indicadores"><i class="i">signal_cellular_alt</i><i class="i">wifi</i><i class="i">battery_full</i></span></div>
+</main>
+</div></div>
+<script src="../js/app.js"></script>
+</body>
+</html>

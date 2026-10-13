@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>E5 · Tratamiento o medicación · Balto</title>
+<link rel="stylesheet" href="../css/balto.css">
+</head>
+<body>
+<div class="escenario"><div class="dispositivo">
+<main class="pantalla">
+  <form id="formulario" class="contenido" data-exito="e9-evento-guardado.html" onsubmit="return false">
+    <div class="encabezado">
+      <a class="boton-icono" href="e1-selector-de-tipo-de-evento.html" data-volver aria-label="Cerrar"><i class="i">close</i></a>
+      <h1 class="encabezado__titulo">Registrar evento</h1>
+      <span class="espacio"></span>
+    </div>
+    <div class="carril" style="gap: 8px;">
+      <span class="chip activo"><i class="i">medication</i>Tratamiento</span>
+      <a class="chip" href="e4-examen-o-laboratorio.html"><i class="i">labs</i>Examen</a>
+      <a class="chip" href="e3-consulta-veterinaria.html"><i class="i">stethoscope</i>Consulta</a>
+      <a class="chip" href="e6-peso.html"><i class="i">monitor_weight</i>Peso</a>
+    </div>
+    <label class="campo foco">
+      <span class="campo__etiqueta">Medicamento *</span>
+      <span class="campo__caja"><i class="i">medication</i><input value="Amoxicilina 250 mg" required></span>
+    </label>
+    <div class="campos" style="width: 100%;">
+      <label class="campo"><span class="campo__etiqueta">Dosis</span><span class="campo__caja"><input value="1 cápsula"></span></label>
+      <label class="campo"><span class="campo__etiqueta">Vía</span><span class="campo__caja"><input value="Oral"></span></label>
+    </div>
+    <div class="campos" style="width: 100%;">
+      <label class="campo"><span class="campo__etiqueta">Frecuencia</span><span class="campo__caja"><input value="Cada 12 h"></span></label>
+      <label class="campo"><span class="campo__etiqueta">Duración</span><span class="campo__caja"><input value="7 días"></span></label>
+    </div>
+    <a class="fila borde-suave" href="g4-definir-horarios-de-toma.html" style="width: 100%;">
+      <span class="fila__icono"><i class="i">schedule</i></span>
+      <span class="fila__textos" style="gap: 2px;"><span class="fila__titulo">Crear horarios de toma</span><span class="fila__sub">08:00 · 20:00</span></span>
+      <i class="i c-500">chevron_right</i>
+    </a>
+    <label class="marcador discontinuo" style="width: 100%; height: 90px; background: rgba(224, 223, 242, 0.6);"><i class="i">receipt_long</i><span>Foto de la fórmula (opcional)</span><input type="file" accept="image/*,application/pdf" data-ir-tras="e12-revisar-la-foto.html" data-error-archivo="e13-archivo-muy-pesado.html" hidden></label>
+  </form>
+  <div class="barra-accion sombra">
+    <a class="boton texto-f9" href="e9-evento-guardado.html" data-enviar="formulario">Guardar evento<i class="i">check</i></a>
+  </div>
+  <div class="barra-estado"><span class="hora">9:41</span><span class="indicadores"><i class="i">signal_cellular_alt</i><i class="i">wifi</i><i class="i">battery_full</i></span></div>
+</main>
+</div></div>
+<script src="../js/app.js"></script>
+</body>
+</html>

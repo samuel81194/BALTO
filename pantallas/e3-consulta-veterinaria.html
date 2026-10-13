@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>E3 · Consulta veterinaria · Balto</title>
+<link rel="stylesheet" href="../css/balto.css">
+</head>
+<body>
+<div class="escenario"><div class="dispositivo">
+<main class="pantalla">
+  <form id="formulario" class="contenido" data-exito="e9-evento-guardado.html" onsubmit="return false">
+    <div class="encabezado">
+      <a class="boton-icono" href="e1-selector-de-tipo-de-evento.html" data-volver aria-label="Cerrar"><i class="i">close</i></a>
+      <h1 class="encabezado__titulo">Registrar evento</h1>
+      <span class="espacio"></span>
+    </div>
+    <div class="carril" style="gap: 8px;">
+      <span class="chip activo"><i class="i">stethoscope</i>Consulta</span>
+      <a class="chip" href="e4-examen-o-laboratorio.html"><i class="i">labs</i>Examen</a>
+      <a class="chip" href="e5-tratamiento-o-medicacion.html"><i class="i">medication</i>Tratamiento</a>
+      <a class="chip" href="e6-peso.html"><i class="i">monitor_weight</i>Peso</a>
+    </div>
+    <label class="campo foco">
+      <span class="campo__etiqueta">Veterinaria que atendió *</span>
+      <span class="campo__caja"><i class="i">local_hospital</i><input value="Clínica Veterinaria Norte" required></span>
+    </label>
+    <label class="campo">
+      <span class="campo__etiqueta">Motivo</span>
+      <span class="campo__caja"><i class="i">help</i><input value="Control de piel"></span>
+    </label>
+    <label class="campo">
+      <span class="campo__etiqueta">Diagnóstico</span>
+      <span class="campo__caja"><i class="i">stethoscope</i><input value="Dermatitis leve"></span>
+    </label>
+    <label class="campo" style="width: 100%; overflow: hidden;">
+      <span class="campo__etiqueta">Recomendaciones</span>
+      <textarea class="area-texto" style="height: 80px;" placeholder="Champú medicado 2 veces por semana. Control en 30 días."></textarea>
+    </label>
+    <div class="nota">
+      <i class="i">info</i>
+      <p>El veterinario no necesita cuenta: tú subes el resultado.</p>
+    </div>
+  </form>
+  <div class="barra-accion sombra">
+    <a class="boton texto-f9" href="e9-evento-guardado.html" data-enviar="formulario">Guardar evento<i class="i">check</i></a>
+  </div>
+  <div class="barra-estado"><span class="hora">9:41</span><span class="indicadores"><i class="i">signal_cellular_alt</i><i class="i">wifi</i><i class="i">battery_full</i></span></div>
+</main>
+</div></div>
+<script src="../js/app.js"></script>
+</body>
+</html>

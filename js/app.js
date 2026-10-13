@@ -84,6 +84,16 @@
       if (casilla) { alternarCasilla(casilla); return; }
     }
 
+    /* Ícono que alterna entre dos estados (p. ej. toggle_on / toggle_off) */
+    el = e.target.closest("[data-conmutar]");
+    if (el) {
+      var ico = el.matches(".i") ? el : el.querySelector(".i[data-estados]") || el.querySelector(".i:last-of-type");
+      var estados = (ico.getAttribute("data-estados") || "toggle_on|toggle_off").split("|");
+      ico.textContent = ico.textContent.trim() === estados[0] ? estados[1] : estados[0];
+      el.setAttribute("aria-checked", ico.textContent === estados[0]);
+      return;
+    }
+
     /* Fila con casilla: alterna selección */
     el = e.target.closest("[data-marcar]");
     if (el) {
@@ -211,7 +221,31 @@
     if (!inp.matches("input[type=file][data-ir-tras]") || !inp.files || !inp.files[0]) return;
     var archivo = inp.files[0];
     var valido = /^(image\/(jpeg|png)|application\/pdf)$/.test(archivo.type) && archivo.size <= 10 * 1024 * 1024;
-    ir(!valido && inp.getAttribute("data-error-archivo") ? inp.getAttribute("data-error-archivo") : inp.getAttribute("data-ir-tras"));
+    var destino = !valido && inp.getAttribute("data-error-archivo") ? inp.getAttribute("data-error-archivo") : inp.getAttribute("data-ir-tras");
+    if (!valido || !/^image\//.test(archivo.type)) { ir(destino); return; }
+    /* Guarda una copia reducida de la foto para mostrarla en la pantalla de revisión */
+    var url = URL.createObjectURL(archivo), img = new Image();
+    img.onload = function () {
+      try {
+        var k = Math.min(1, 900 / Math.max(img.width, img.height));
+        var lienzo = document.createElement("canvas");
+        lienzo.width = Math.round(img.width * k); lienzo.height = Math.round(img.height * k);
+        lienzo.getContext("2d").drawImage(img, 0, 0, lienzo.width, lienzo.height);
+        sessionStorage.setItem("balto-foto", lienzo.toDataURL("image/jpeg", 0.85));
+      } catch (err) { /* sin vista previa */ }
+      ir(destino);
+    };
+    img.onerror = function () { ir(destino); };
+    img.src = url;
+  });
+
+  /* Vista previa de la última foto elegida */
+  Array.prototype.forEach.call(document.querySelectorAll("[data-vista-previa]"), function (el) {
+    var foto = null;
+    try { foto = sessionStorage.getItem("balto-foto"); } catch (err) { /* sin almacenamiento */ }
+    if (!foto) return;
+    el.style.backgroundImage = "url(" + foto + ")";
+    el.classList.add("con-foto");
   });
 
   /* Búsqueda: con coincidencias muestra resultados; si no, el estado vacío */

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>E4 · Examen o laboratorio · Balto</title>
+<link rel="stylesheet" href="../css/balto.css">
+</head>
+<body>
+<div class="escenario"><div class="dispositivo">
+<main class="pantalla">
+  <form id="formulario" class="contenido" data-exito="e9-evento-guardado.html" onsubmit="return false">
+    <div class="encabezado">
+      <a class="boton-icono" href="e1-selector-de-tipo-de-evento.html" data-volver aria-label="Cerrar"><i class="i">close</i></a>
+      <h1 class="encabezado__titulo">Registrar evento</h1>
+      <span class="espacio"></span>
+    </div>
+    <div class="carril" style="gap: 8px;">
+      <span class="chip activo"><i class="i">labs</i>Examen</span>
+      <a class="chip" href="e3-consulta-veterinaria.html"><i class="i">stethoscope</i>Consulta</a>
+      <a class="chip" href="e5-tratamiento-o-medicacion.html"><i class="i">medication</i>Tratamiento</a>
+      <a class="chip" href="e6-peso.html"><i class="i">monitor_weight</i>Peso</a>
+    </div>
+    <label class="campo foco">
+      <span class="campo__etiqueta">Tipo de examen *</span>
+      <span class="campo__caja"><i class="i">labs</i><input value="Hemograma completo" required></span>
+    </label>
+    <label class="campo">
+      <span class="campo__etiqueta">Laboratorio</span>
+      <span class="campo__caja"><i class="i">science</i><input value="VetDiagnóstica"></span>
+    </label>
+    <label class="campo">
+      <span class="campo__etiqueta">Fecha *</span>
+      <span class="campo__caja"><i class="i">event</i><input inputmode="numeric" value="18/08/2026" required></span>
+    </label>
+    <label class="campo" style="width: 100%; overflow: hidden;">
+      <span class="campo__etiqueta">Resultado principal</span>
+      <textarea class="area-texto" style="height: 80px;" placeholder="Valores dentro de rangos normales."></textarea>
+    </label>
+    <div class="fila borde" style="width: 100%;">
+      <span class="fila__icono"><i class="i">picture_as_pdf</i></span>
+      <span class="fila__textos" style="gap: 2px;"><span class="fila__titulo">hemograma.pdf</span><span class="fila__sub">PDF · 820 KB</span></span>
+      <i class="i c-500" data-quitar=".fila" aria-label="Quitar">close</i>
+    </div>
+  </form>
+  <div class="barra-accion sombra">
+    <a class="boton texto-f9" href="e9-evento-guardado.html" data-enviar="formulario">Guardar evento<i class="i">check</i></a>
+  </div>
+  <div class="barra-estado"><span class="hora">9:41</span><span class="indicadores"><i class="i">signal_cellular_alt</i><i class="i">wifi</i><i class="i">battery_full</i></span></div>
+</main>
+</div></div>
+<script src="../js/app.js"></script>
+</body>
+</html>

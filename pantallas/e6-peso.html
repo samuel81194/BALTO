@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>E6 · Peso · Balto</title>
+<link rel="stylesheet" href="../css/balto.css">
+</head>
+<body>
+<div class="escenario"><div class="dispositivo">
+<main class="pantalla">
+  <form id="formulario" class="contenido" data-exito="e9-evento-guardado.html" onsubmit="return false">
+    <div class="encabezado">
+      <a class="boton-icono" href="e1-selector-de-tipo-de-evento.html" data-volver aria-label="Cerrar"><i class="i">close</i></a>
+      <h1 class="encabezado__titulo">Registrar evento</h1>
+      <span class="espacio"></span>
+    </div>
+    <div class="carril" style="gap: 8px;">
+      <span class="chip activo"><i class="i">monitor_weight</i>Peso</span>
+      <a class="chip" href="e5-tratamiento-o-medicacion.html"><i class="i">medication</i>Tratamiento</a>
+      <a class="chip" href="e4-examen-o-laboratorio.html"><i class="i">labs</i>Examen</a>
+      <a class="chip" href="e3-consulta-veterinaria.html"><i class="i">stethoscope</i>Consulta</a>
+    </div>
+    <label class="campo foco">
+      <span class="campo__etiqueta">Peso (kg) *</span>
+      <span class="campo__caja"><i class="i">monitor_weight</i><input inputmode="decimal" value="28,4" required></span>
+    </label>
+    <label class="campo">
+      <span class="campo__etiqueta">Fecha de la medición</span>
+      <span class="campo__caja"><i class="i">event</i><input inputmode="numeric" value="01/09/2026"></span>
+    </label>
+    <a class="grafica" href="f4-evolucion-del-peso.html" aria-label="Ver evolución del peso">
+      <span class="seccion"><span class="t-cuerpo-f c-900">Evolución del peso</span><span class="t-micro c-500">6 MESES</span></span>
+      <span class="grafica__barras"><span style="height: 55px;"></span><span style="height: 62px;"></span><span style="height: 60px;"></span><span style="height: 72px;"></span><span style="height: 78px;"></span><span class="actual" style="height: 86px;"></span></span>
+    </a>
+    <div class="nota">
+      <i class="i">trending_up</i>
+      <p>+0,3 kg frente al mes anterior.</p>
+    </div>
+  </form>
+  <div class="barra-accion">
+    <a class="boton texto-f9" href="e9-evento-guardado.html" data-enviar="formulario">Guardar evento<i class="i">check</i></a>
+  </div>
+  <div class="barra-estado"><span class="hora">9:41</span><span class="indicadores"><i class="i">signal_cellular_alt</i><i class="i">wifi</i><i class="i">battery_full</i></span></div>
+</main>
+</div></div>
+<script src="../js/app.js"></script>
+</body>
+</html>

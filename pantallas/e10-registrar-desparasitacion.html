@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>E10 · Registrar desparasitación · Balto</title>
+<link rel="stylesheet" href="../css/balto.css">
+</head>
+<body>
+<div class="escenario"><div class="dispositivo">
+<main class="pantalla">
+  <div class="barra-estado"><span class="hora">9:41</span><span class="indicadores"><i class="i">signal_cellular_alt</i><i class="i">wifi</i><i class="i">battery_full</i></span></div>
+  <form id="formulario" class="contenido" data-exito="e9-evento-guardado.html" onsubmit="return false" style="overflow: hidden;">
+    <div class="encabezado">
+      <a class="boton-icono" href="e1-selector-de-tipo-de-evento.html" data-volver aria-label="Volver"><i class="i">arrow_back</i></a>
+      <h1 class="encabezado__titulo tema-arena">Registrar evento</h1>
+      <span class="espacio"></span>
+    </div>
+    <div class="carril" style="gap: 8px;">
+      <span class="chip activo lavanda"><i class="i">medication</i>Desparasitación</span>
+      <a class="chip lavanda" href="e2-registrar-vacuna.html"><i class="i">vaccines</i>Vacuna</a>
+      <a class="chip lavanda" href="e3-consulta-veterinaria.html"><i class="i">stethoscope</i>Consulta</a>
+    </div>
+    <label class="campo">
+      <span class="campo__etiqueta">Producto</span>
+      <span class="campo__caja"><i class="i">medication</i><input class="ejemplo-900" placeholder="Nombre del antiparasitario" required></span>
+    </label>
+    <div class="campos" style="width: 100%;">
+      <label class="campo"><span class="campo__etiqueta">Fecha</span><span class="campo__caja"><i class="i">event</i><input inputmode="numeric" value="21/09/2026"></span></label>
+      <label class="campo"><span class="campo__etiqueta">Vía</span><span class="campo__caja"><i class="i">straighten</i><input value="Oral"></span></label>
+    </div>
+    <label class="campo">
+      <span class="campo__etiqueta">Próxima dosis</span>
+      <span class="campo__caja"><i class="i">event_repeat</i><input inputmode="numeric" value="21/12/2026"></span>
+    </label>
+    <div class="fila suave tema-arena" style="width: 100%;" data-conmutar role="switch" aria-checked="true">
+      <span class="fila__icono"><i class="i">notifications</i></span>
+      <span class="fila__textos"><span class="fila__titulo">Recordarme la próxima dosis</span><span class="fila__sub">7 días antes</span></span>
+      <i class="i i22 c-500" data-estados="toggle_on|toggle_off">toggle_on</i>
+    </div>
+    <div class="nota amplia baja tema-arena" style="height: 58px;"><i class="i">info</i><p>Interna cada 3 meses, externa cada mes. Confirma con tu veterinario.</p></div>
+  </form>
+  <div class="barra-accion transparente">
+    <a class="boton" href="e9-evento-guardado.html" data-enviar="formulario">Guardar</a>
+  </div>
+</main>
+</div></div>
+<script src="../js/app.js"></script>
+</body>
+</html>

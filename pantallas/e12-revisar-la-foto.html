@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>E12 · Revisar la foto · Balto</title>
+<link rel="stylesheet" href="../css/balto.css">
+</head>
+<body>
+<div class="escenario"><div class="dispositivo">
+<main class="pantalla">
+  <div class="barra-estado"><span class="hora">9:41</span><span class="indicadores"><i class="i">signal_cellular_alt</i><i class="i">wifi</i><i class="i">battery_full</i></span></div>
+  <div class="contenido" style="overflow: hidden;">
+    <div class="encabezado">
+      <a class="boton-icono" href="e2-registrar-vacuna.html" data-volver aria-label="Volver"><i class="i">arrow_back</i></a>
+      <h1 class="encabezado__titulo tema-arena">Revisar la foto</h1>
+      <span class="espacio"></span>
+    </div>
+    <div class="marcador tema-arena" id="vista" data-vista-previa style="width: 100%; height: 320px;"><i class="i">image</i><span>Vista previa de la foto</span></div>
+    <div class="cuadricula" style="flex-wrap: nowrap; white-space: nowrap;">
+      <span class="chip activo lavanda"><i class="i">crop</i>Recortar</span>
+      <span class="chip lavanda" data-rotar="#vista"><i class="i">rotate_right</i>Girar</span>
+      <label class="chip lavanda"><i class="i">replay</i>Repetir<input type="file" accept="image/*" capture="environment" data-ir-tras="e12-revisar-la-foto.html" data-error-archivo="e13-archivo-muy-pesado.html" hidden></label>
+    </div>
+    <div class="nota amplia baja tema-arena" style="height: 51px;"><i class="i">visibility</i><p>Revisa que se lean las fechas y los nombres antes de adjuntarla.</p></div>
+  </div>
+  <div class="barra-accion transparente">
+    <a class="boton" href="e2-registrar-vacuna.html">Usar esta foto</a>
+    <label class="boton secundario">Tomar otra<input type="file" accept="image/*" capture="environment" data-ir-tras="e12-revisar-la-foto.html" data-error-archivo="e13-archivo-muy-pesado.html" hidden></label>
+  </div>
+</main>
+</div></div>
+<script src="../js/app.js"></script>
+</body>
+</html>

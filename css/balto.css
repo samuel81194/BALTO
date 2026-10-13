@@ -719,3 +719,81 @@ p { overflow-wrap: break-word; }
 .nav-inferior.lavanda > a.registrar { color: var(--morado-900); }
 .campo-busqueda.gris { height: auto; padding: 15px 16px; gap: 12px; border-radius: 18px; border-color: var(--acento-300); }
 .campo-busqueda.gris input { height: 24px; line-height: 22px; color: var(--neutro-500); }
+
+/* ---------- Selector de tipo de evento (E1) ---------- */
+.tipos { display: flex; flex-wrap: wrap; gap: 30px 10px; align-content: flex-start; overflow: hidden; }
+.tipo {
+  width: 107px; height: 70px; flex-shrink: 0; overflow: hidden;
+  display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 8px;
+  border-radius: 22px; background: var(--neutro-0); box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
+  font: 500 11px/14px var(--f-cuerpo); letter-spacing: 0.055px; color: var(--neutro-900); white-space: nowrap;
+}
+.tipo > span:first-child {
+  width: 40px; height: 40px; border-radius: 20px; flex-shrink: 0;
+  display: flex; align-items: center; justify-content: center;
+  background: var(--acento-100); color: var(--primario-900);
+}
+.tipo > span:first-child > .i { font-size: 20px; line-height: 20px; }
+
+/* Píldora de mascota en el encabezado */
+.mascota-pildora {
+  display: flex; align-items: center; gap: 6px; flex-shrink: 0;
+  padding: 4px 10px 4px 4px; border-radius: 22px; background: var(--neutro-0);
+  font: 600 13px/16px var(--f-cuerpo); color: var(--neutro-900); white-space: nowrap; overflow: hidden;
+}
+.mascota-pildora > .i { font-size: 18px; line-height: 18px; color: var(--neutro-500); }
+.foto-mascota.f34 { width: 34px; height: 34px; border-radius: 17px; --fm-fin: #2e5955; }
+.foto-mascota.f34 > .i { font-size: 13.6px; line-height: 13.6px; }
+
+/* ---------- Formulario en tarjeta ---------- */
+.formulario {
+  display: flex; flex-direction: column; align-items: stretch; gap: 16px;
+  padding: 20px; border-radius: 28px; background: var(--neutro-0);
+  box-shadow: var(--sombra-suave); overflow: hidden;
+}
+.formulario > * { flex-shrink: 0; }
+
+/* Archivo adjunto */
+.adjunto {
+  display: flex; align-items: center; gap: 12px;
+  /* borde discontinuo de 1,5 px: el navegador lo dibuja a 1 px; +0,5 px de relleno conserva la medida */
+  padding: 12.5px 14.5px 12.5px 12.5px; border-radius: 20px;
+  background: var(--acento-100); border: 1.5px dashed var(--primario-800); overflow: hidden;
+}
+.adjunto__icono {
+  width: 48px; height: 48px; border-radius: 14px; flex-shrink: 0;
+  display: flex; align-items: center; justify-content: center;
+  background: var(--primario-800); color: var(--neutro-0);
+}
+.adjunto__textos { flex: 1 0 0; min-width: 1px; display: flex; flex-direction: column; gap: 2px; white-space: nowrap; overflow: hidden; }
+.adjunto > .i { font-size: 20px; line-height: 20px; color: var(--neutro-500); cursor: pointer; }
+
+/* Fila con interruptor dentro de formularios */
+.fila-aviso { display: flex; align-items: center; gap: 12px; overflow: hidden; }
+.fila-aviso__icono {
+  width: 40px; height: 40px; border-radius: 20px; flex-shrink: 0;
+  display: flex; align-items: center; justify-content: center;
+  background: var(--acento-100); color: var(--primario-900);
+}
+.fila-aviso__icono > .i { font-size: 20px; line-height: 20px; }
+.fila-aviso__textos { flex: 1 0 0; min-width: 1px; display: flex; flex-direction: column; gap: 2px; overflow: hidden; }
+
+/* ---------- Vista previa con la foto elegida ---------- */
+.marcador.con-foto { background: var(--neutro-900) center / contain no-repeat; }
+.marcador.con-foto > * { display: none; }
+
+/* ---------- Área de texto con texto de ejemplo oscuro ---------- */
+.area-texto.ejemplo-900::placeholder { color: var(--neutro-900); }
+
+/* ---------- Gráfica de barras (evolución del peso) ---------- */
+.grafica {
+  width: 100%; display: flex; flex-direction: column; gap: 14px;
+  padding: 18px; border-radius: 24px;
+  background: var(--neutro-0); border: 1px solid var(--acento-100);
+  overflow: hidden;
+}
+.grafica__barras { display: flex; align-items: flex-end; justify-content: space-between; height: 120px; overflow: hidden; }
+.grafica__barras > span { width: 30px; border-radius: 8px; background: var(--acento-300); }
+.grafica__barras > span.actual { background: var(--primario-900); }
+.campo__caja input.ejemplo-900::placeholder { color: var(--neutro-900); }
+[data-conmutar] { cursor: pointer; }
