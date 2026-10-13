@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>K5 · Agendar cita · Balto</title>
+<link rel="stylesheet" href="../css/balto.css">
+</head>
+<body>
+<div class="escenario"><div class="dispositivo">
+<main class="pantalla">
+  <div class="contenido">
+    <div class="encabezado">
+      <a class="boton-icono" href="k4-ficha-del-proveedor.html" data-volver aria-label="Volver"><i class="i">arrow_back</i></a>
+      <h1 class="encabezado__titulo">Agendar cita</h1>
+      <span class="espacio"></span>
+    </div>
+    <a class="fila" href="k4-ficha-del-proveedor.html">
+      <span class="fila__icono"><i class="i">local_hospital</i></span>
+      <span class="fila__textos" style="gap: 2px;"><span class="fila__titulo">Clínica Veterinaria Norte</span><span class="fila__sub">Vacunación · Luna</span></span>
+      <i class="i c-500">edit</i>
+    </a>
+    <div class="calendario">
+      <div class="calendario__mes"><i class="i">chevron_left</i><span>Septiembre 2026</span><i class="i">chevron_right</i></div>
+      <div class="calendario__cuadricula" data-dias><span class="cabecera">L</span><span class="cabecera">M</span><span class="cabecera">M</span><span class="cabecera">J</span><span class="cabecera">V</span><span class="cabecera">S</span><span class="cabecera">D</span><span></span><span>1</span><span>2</span><span>3</span><span>4</span><span>5</span><span>6</span><span>7</span><span>8</span><span>9</span><span>10</span><span>11</span><span>12</span><span>13</span><span>14</span><span>15</span><span>16</span><span>17</span><span>18</span><span>19</span><span>20</span><span>21</span><span>22</span><span>23</span><span class="disponible">24</span><span class="activo">25</span><span class="disponible">26</span><span>27</span><span>28</span><span class="disponible">29</span><span>30</span></div>
+    </div>
+    <p class="t-micro c-500 nowrap" id="dia-elegido">HORARIOS DISPONIBLES · JUE 25</p>
+    <div class="cuadricula" data-grupo>
+      <span class="chip">08:30</span>
+      <span class="chip activo">10:00</span>
+      <span class="chip">11:30</span>
+      <span class="chip">15:00</span>
+      <span class="chip">16:30</span>
+    </div>
+  </div>
+  <div class="barra-accion">
+    <a class="boton texto-f9" href="k9-cita-agendada.html">Confirmar cita<i class="i">check</i></a>
+  </div>
+  <div class="barra-estado"><span class="hora">9:41</span><span class="indicadores"><i class="i">signal_cellular_alt</i><i class="i">wifi</i><i class="i">battery_full</i></span></div>
+  <script>
+    /* Elegir día: los días marcados tienen horarios; los demás llevan a "Sin horarios disponibles" */
+    (function () {
+      var semana = ["LUN", "MAR", "MIÉ", "JUE", "VIE", "SÁB", "DOM"];
+      document.querySelector("[data-dias]").addEventListener("click", function (e) {
+        var dia = e.target.closest("span");
+        if (!dia || dia.classList.contains("cabecera") || !dia.textContent) return;
+        var n = Number(dia.textContent);
+        if (!dia.classList.contains("disponible") && !dia.classList.contains("activo")) { window.location.href = "k10-sin-horarios-disponibles.html"; return; }
+        Array.prototype.forEach.call(this.children, function (d) {
+          if (d.classList.contains("activo")) { d.classList.remove("activo"); d.classList.add("disponible"); }
+        });
+        dia.classList.remove("disponible"); dia.classList.add("activo");
+        document.getElementById("dia-elegido").textContent = "HORARIOS DISPONIBLES · " + semana[n % 7] + " " + n;
+      });
+    })();
+  </script>
+</main>
+</div></div>
+<script src="../js/app.js"></script>
+</body>
+</html>

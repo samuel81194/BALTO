@@ -923,3 +923,17 @@ p { overflow-wrap: break-word; }
 .boton.oscuro { background: var(--neutro-900); color: var(--neutro-0); }
 .rasgo.suave { background: var(--acento-100); color: var(--primario-800); }
 .rasgo.suave > span:last-child { font-weight: 500; }
+
+/* ---------- Calendario (K) ---------- */
+.calendario { display: flex; flex-direction: column; align-items: flex-start; gap: 10px; padding: 16px; border-radius: 24px; background: var(--neutro-0); overflow: hidden; }
+.calendario__mes { width: 100%; display: flex; align-items: center; justify-content: space-between; white-space: nowrap; overflow: hidden; }
+.calendario__mes > .i { font-size: 22px; line-height: 22px; color: var(--neutro-500); cursor: pointer; }
+.calendario__mes > span { font: 600 15px/22px var(--f-cuerpo); color: var(--neutro-900); }
+.calendario__cuadricula { width: 308px; display: flex; flex-wrap: wrap; gap: 4px; align-content: flex-start; overflow: hidden; }
+.calendario__cuadricula > span { width: 40px; height: 36px; border-radius: 18px; display: flex; align-items: center; justify-content: center; font: 400 13px/18px var(--f-cuerpo); color: var(--neutro-900); white-space: nowrap; }
+.calendario__cuadricula > span.cabecera { height: 24px; font: 500 11px/14px var(--f-cuerpo); letter-spacing: 0.055px; color: var(--neutro-500); }
+.calendario__cuadricula > span.disponible { background: var(--acento-100); }
+.calendario__cuadricula > span.activo { background: var(--primario-900); color: var(--neutro-0); }
+[data-dias] > span:not(.cabecera):not(:empty) { cursor: pointer; }
+.boton-icono.favorito.activo .i { font-variation-settings: "FILL" 1, "GRAD" 0, "opsz" 24, "wght" 400; color: var(--error); }
+.campo-busqueda input.ejemplo-500::placeholder { color: var(--neutro-500); }

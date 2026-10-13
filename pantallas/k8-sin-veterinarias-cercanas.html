@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>K8 · Sin veterinarias cercanas · Balto</title>
+<link rel="stylesheet" href="../css/balto.css">
+</head>
+<body>
+<div class="escenario"><div class="dispositivo">
+<main class="pantalla">
+  <div class="barra-estado"><span class="hora">9:41</span><span class="indicadores"><i class="i">signal_cellular_alt</i><i class="i">wifi</i><i class="i">battery_full</i></span></div>
+  <div class="contenido tema-arena" style="overflow: hidden;">
+    <div class="encabezado">
+      <a class="boton-icono" href="k3-listado-de-proveedores.html" data-volver aria-label="Volver" style="color: #262626"><i class="i">arrow_back</i></a>
+      <h1 class="encabezado__titulo">Veterinarias</h1>
+      <span class="espacio"></span>
+    </div>
+    <form class="buscador" data-buscar="vet|clin|urgen|consul|vacun|est[eé]t|pase|norte|chapinero|usaqu" data-resultados="k3-listado-de-proveedores.html" data-sin-resultados="k8-sin-veterinarias-cercanas.html">
+      <label class="campo-busqueda gris"><i class="i">search</i><input type="search" class="ejemplo-500" placeholder="Guardería 24 h" enterkeyhint="search"></label>
+      <a class="boton-icono" href="k2-filtros-de-proveedores.html" aria-label="Filtros" style="color: #262626"><i class="i">tune</i></a>
+    </form>
+    <div class="cuadricula" style="flex-wrap: nowrap; white-space: nowrap;">
+      <span class="chip activo lavanda" data-alternar><i class="i">schedule</i>Abierto ahora</span>
+      <span class="chip activo lavanda" data-alternar><i class="i">near_me</i>1 km</span>
+    </div>
+    <div class="estado compacto">
+      <div class="contenedor-icono c104 cuadrado"><i class="i">search_off</i></div>
+      <p class="t-t1 c-900">Nada cerca con esos filtros</p>
+      <p class="t-cuerpo c-500">Prueba ampliando la distancia o quitando "abierto ahora".</p>
+    </div>
+    <div class="enlace"><a href="k3-listado-de-proveedores.html">Ampliar a 5 km</a></div>
+  </div>
+  <div class="barra-accion transparente">
+    <a class="boton" href="k3-listado-de-proveedores.html">Ampliar la búsqueda</a>
+    <a class="boton secundario" href="k3-listado-de-proveedores.html">Quitar filtros</a>
+  </div>
+</main>
+</div></div>
+<script src="../js/app.js"></script>
+</body>
+</html>

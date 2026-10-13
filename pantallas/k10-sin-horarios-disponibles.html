@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>K10 · Sin horarios disponibles · Balto</title>
+<link rel="stylesheet" href="../css/balto.css">
+</head>
+<body>
+<div class="escenario"><div class="dispositivo">
+<main class="pantalla">
+  <div class="barra-estado"><span class="hora">9:41</span><span class="indicadores"><i class="i">signal_cellular_alt</i><i class="i">wifi</i><i class="i">battery_full</i></span></div>
+  <div class="contenido tema-arena" style="overflow: hidden;">
+    <div class="encabezado">
+      <a class="boton-icono" href="k5-agendar-cita.html" data-volver aria-label="Volver" style="color: #262626"><i class="i">arrow_back</i></a>
+      <h1 class="encabezado__titulo">Agendar cita</h1>
+      <span class="espacio"></span>
+    </div>
+    <a class="fila suave" href="k4-ficha-del-proveedor.html">
+      <span class="fila__icono"><i class="i">local_hospital</i></span>
+      <span class="fila__textos"><span class="fila__titulo">Clínica Veterinaria Norte</span><span class="fila__sub">Vacunación · Luna</span></span>
+      <i class="i c-500">chevron_right</i>
+    </a>
+    <p class="t-micro nowrap" style="height: 24px; color: var(--primario-900);">HORARIOS · JUE 25</p>
+    <div class="estado compacto">
+      <div class="contenedor-icono c104 cuadrado"><i class="i">event_busy</i></div>
+      <p class="t-t1 c-900">No quedan horarios ese día</p>
+      <p class="t-cuerpo c-500">Elige otra fecha o te avisamos si se libera un cupo.</p>
+    </div>
+    <div class="cuadricula" style="flex-wrap: nowrap; white-space: nowrap; --neutro-900: #262626;">
+      <a class="chip lavanda" href="k5-agendar-cita.html"><i class="i">event</i>Vie 26</a>
+      <a class="chip lavanda" href="k5-agendar-cita.html"><i class="i">event</i>Sáb 27</a>
+      <a class="chip lavanda" href="k5-agendar-cita.html"><i class="i">event</i>Lun 29</a>
+    </div>
+    <div class="fila suave" data-conmutar role="switch" aria-checked="true">
+      <span class="fila__icono"><i class="i">notifications_active</i></span>
+      <span class="fila__textos"><span class="fila__titulo">Avísame si se libera un cupo</span><span class="fila__sub">Para el jueves 25</span></span>
+      <i class="i c-500" data-estados="toggle_on|toggle_off">toggle_on</i>
+    </div>
+  </div>
+  <div class="barra-accion transparente">
+    <a class="boton" href="k5-agendar-cita.html">Ver otro día</a>
+    <a class="boton secundario" href="k3-listado-de-proveedores.html">Otra veterinaria</a>
+  </div>
+</main>
+</div></div>
+<script src="../js/app.js"></script>
+</body>
+</html>
