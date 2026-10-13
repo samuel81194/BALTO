@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>I2 · Registrar hábito · Balto</title>
+<link rel="stylesheet" href="../css/balto.css">
+<style>
+.barra-estado { top: -5px; }
+</style>
+</head>
+<body>
+<div class="escenario"><div class="dispositivo">
+<main class="pantalla">
+  <form id="formulario" class="contenido" data-exito="i1-bitacora-de-habitos.html" onsubmit="return false">
+    <div class="encabezado">
+      <a class="boton-icono" href="i1-bitacora-de-habitos.html" data-volver aria-label="Cerrar"><i class="i">close</i></a>
+      <h1 class="encabezado__titulo">Registrar hábito</h1>
+      <span class="espacio"></span>
+    </div>
+    <div class="tipos habitos" data-grupo>
+      <div class="tipo activo"><span><i class="i">directions_walk</i></span>Paseo</div>
+      <div class="tipo"><span><i class="i">sports_baseball</i></span>Actividad</div>
+      <div class="tipo"><span><i class="i">bedtime</i></span>Sueño</div>
+      <div class="tipo"><span><i class="i">water_drop</i></span>Deposiciones</div>
+      <div class="tipo"><span><i class="i">restaurant</i></span>Alimentación</div>
+      <div class="tipo"><span><i class="i">psychology</i></span>Atípico</div>
+    </div>
+    <div class="campos">
+      <label class="campo"><span class="campo__etiqueta">Fecha</span><span class="campo__caja"><input inputmode="numeric" value="22/09/2026" required></span></label>
+      <label class="campo"><span class="campo__etiqueta">Duración</span><span class="campo__caja"><input value="45 min"></span></label>
+    </div>
+    <label class="campo" style="width: 100%; overflow: hidden;">
+      <span class="campo__etiqueta">Observación</span>
+      <textarea class="area-texto" style="height: 80px;" placeholder="Paseo largo en el parque, muy activa."></textarea>
+    </label>
+    <label class="marcador discontinuo" style="height: 90px; background: rgba(224, 223, 242, 0.6);"><i class="i">add_a_photo</i><span>Foto o video de apoyo</span><input type="file" accept="image/*,video/*" data-ir-tras="e12-revisar-la-foto.html" hidden></label>
+  </form>
+  <div class="barra-accion">
+    <a class="boton texto-f9" href="i1-bitacora-de-habitos.html" data-enviar="formulario">Guardar<i class="i">check</i></a>
+  </div>
+  <div class="barra-estado"><span class="hora">9:41</span><span class="indicadores"><i class="i">signal_cellular_alt</i><i class="i">wifi</i><i class="i">battery_full</i></span></div>
+</main>
+</div></div>
+<script src="../js/app.js"></script>
+</body>
+</html>
