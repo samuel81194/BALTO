@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>M9 · Notificaciones · Balto</title>
+<link rel="stylesheet" href="../css/balto.css">
+</head>
+<body>
+<div class="escenario"><div class="dispositivo">
+<main class="pantalla">
+  <div class="barra-estado"><span class="hora">9:41</span><span class="indicadores"><i class="i">signal_cellular_alt</i><i class="i">wifi</i><i class="i">battery_full</i></span></div>
+  <div class="contenido tema-arena">
+    <div class="encabezado">
+      <a class="boton-icono" href="inicio.html" data-volver aria-label="Volver" style="color: #262626"><i class="i">arrow_back</i></a>
+      <h1 class="encabezado__titulo">Notificaciones</h1>
+      <span class="boton-icono" style="color: #262626" aria-label="Marcar todas como leídas"><i class="i">done_all</i></span>
+    </div>
+    <div class="carril" style="gap: 8px;" data-grupo data-lista="#lista-avisos">
+      <span class="chip activo lavanda" data-filtro="*" style="color: var(--neutro-0);"><i class="i">apps</i>Todas</span>
+      <span class="chip lavanda" data-filtro="sin-leer" style="color: #262626;"><i class="i">mark_email_unread</i>Sin leer (2)</span>
+    </div>
+    <div class="lista" id="lista-avisos">
+      <a class="fila suave" href="j2-detalle-de-alerta.html" data-tipo="sin-leer">
+        <span class="fila__icono"><i class="i">vaccines</i></span>
+        <span class="fila__textos"><span class="fila__titulo">Refuerzo antirrábica</span><span class="fila__sub">Vence en 2 días · hace 1 h</span></span>
+        <i class="i">chevron_right</i>
+      </a>
+      <a class="fila suave" href="g5-recordatorio-de-toma.html" data-tipo="sin-leer">
+        <span class="fila__icono"><i class="i">medication</i></span>
+        <span class="fila__textos"><span class="fila__titulo">Dosis de las 20:00</span><span class="fila__sub">Amoxicilina · hace 3 h</span></span>
+        <i class="i">chevron_right</i>
+      </a>
+      <a class="fila suave" href="n9-mis-pedidos-y-seguimiento.html">
+        <span class="fila__icono"><i class="i">local_shipping</i></span>
+        <span class="fila__textos"><span class="fila__titulo">Tu pedido salió</span><span class="fila__sub">Pedido #000123 · ayer</span></span>
+        <i class="i">chevron_right</i>
+      </a>
+    </div>
+    <a class="nota amplia baja" href="m3-configurar-notificaciones.html" style="height: 61px;"><i class="i">tune</i><p>Elige qué avisos quieres recibir en Ajustes › Notificaciones.</p></a>
+  </div>
+  <div class="barra-accion transparente">
+    <a class="boton" href="j1-centro-de-alertas.html">Ver todas las alertas</a>
+  </div>
+</main>
+</div></div>
+<script src="../js/app.js"></script>
+</body>
+</html>
