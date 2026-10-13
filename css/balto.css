@@ -937,3 +937,27 @@ p { overflow-wrap: break-word; }
 [data-dias] > span:not(.cabecera):not(:empty) { cursor: pointer; }
 .boton-icono.favorito.activo .i { font-variation-settings: "FILL" 1, "GRAD" 0, "opsz" 24, "wght" 400; color: var(--error); }
 .campo-busqueda input.ejemplo-500::placeholder { color: var(--neutro-500); }
+
+/* ---------- Compartir (L) ---------- */
+.canales.blancos > a { color: var(--neutro-900); }
+.canales.blancos > a > span { border-radius: 28px; background: var(--neutro-0); border: 1px solid var(--borde-suave); }
+.pasos { display: flex; align-items: flex-start; overflow: hidden; }
+.pasos__paso { width: 76px; flex-shrink: 0; display: flex; flex-direction: column; align-items: center; gap: 6px; overflow: hidden; white-space: nowrap; font: 500 11px/14px var(--f-cuerpo); letter-spacing: 0.055px; color: var(--neutro-900); }
+.pasos__paso > span { width: 28px; height: 28px; border-radius: 14px; display: flex; align-items: center; justify-content: center; font: 600 13px/16px var(--f-cuerpo); color: var(--neutro-900); background: var(--primario-800); }
+.pasos__paso > span > .i { font-size: 16px; line-height: 16px; }
+.pasos__paso.hecho > span { background: var(--primario-900); color: var(--neutro-0); }
+.pasos__paso.pendiente { color: var(--neutro-500); }
+.pasos__paso.pendiente > span { background: var(--neutro-0); box-shadow: inset 0 0 0 1.5px var(--acento-300); color: var(--neutro-500); }
+.pasos__conector { flex: 1 0 0; min-width: 1px; padding-top: 13px; }
+.pasos__conector::before { content: ""; display: block; height: 2px; background: var(--acento-300); }
+.pasos__conector.hecho::before { background: var(--primario-900); }
+.vista-pdf { display: flex; flex-direction: column; align-items: center; padding: 16px 0; border-radius: 28px; background: var(--acento-100); overflow: hidden; }
+.hoja-pdf { width: 290px; display: flex; flex-direction: column; align-items: stretch; gap: 10px; padding: 18px 18px 14px; border-radius: 10px; background: var(--neutro-0); box-shadow: var(--sombra-suave); overflow: hidden; }
+.hoja-pdf__fila { display: flex; align-items: center; justify-content: space-between; gap: 8px; white-space: nowrap; overflow: hidden; }
+.hoja-pdf__marca { display: flex; align-items: center; gap: 6px; font: 600 13px/16px var(--f-cuerpo); color: var(--neutro-900); }
+.hoja-pdf__marca > span { width: 22px; height: 22px; border-radius: 11px; display: flex; align-items: center; justify-content: center; background: var(--primario-900); color: var(--neutro-0); }
+.hoja-pdf__marca > span > .i { font-size: 13px; line-height: 13px; }
+.hoja-pdf__linea { height: 1px; background: var(--acento-100); }
+.hoja-pdf__dato { flex: 1 0 0; min-width: 1px; display: flex; flex-direction: column; gap: 2px; padding: 8px 10px; border-radius: 10px; background: var(--f9); overflow: hidden; }
+.hoja-pdf__dato > :last-child { font: 600 13px/16px var(--f-cuerpo); color: var(--neutro-900); }
+[data-copiar] { cursor: pointer; }

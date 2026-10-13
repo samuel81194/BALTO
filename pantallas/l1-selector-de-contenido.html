@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>L1 · Selector de contenido · Balto</title>
+<link rel="stylesheet" href="../css/balto.css">
+</head>
+<body>
+<div class="escenario"><div class="dispositivo">
+<main class="pantalla">
+  <div class="contenido" style="--gap: 14px;">
+    <div class="encabezado">
+      <a class="boton-icono" href="inicio.html" data-volver aria-label="Volver"><i class="i">arrow_back</i></a>
+      <h1 class="encabezado__titulo">Compartir perfil</h1>
+      <a class="boton-icono" href="m8-ayuda.html" aria-label="Ayuda"><i class="i">help</i></a>
+    </div>
+    <div class="progreso">
+      <p class="progreso__texto">PASO 1 DE 3 · CONTENIDO</p>
+      <div class="progreso__barras"><span class="hecho"></span><span></span><span></span></div>
+    </div>
+    <div class="selector">
+      <button type="button">Perfil completo</button>
+      <button type="button" class="activo">Filtrado</button>
+    </div>
+    <p class="t-micro c-500 nowrap">INCLUIR</p>
+    <div class="lista">
+      <div class="fila borde-suave seleccionada" data-marcar>
+        <span class="fila__icono"><i class="i">badge</i></span>
+        <span class="fila__textos"><span class="fila__titulo">Identificación y contacto</span></span>
+        <i class="i marca">check_box</i>
+      </div>
+      <div class="fila borde-suave seleccionada" data-marcar>
+        <span class="fila__icono"><i class="i">vaccines</i></span>
+        <span class="fila__textos"><span class="fila__titulo">Vacunas y desparasitaciones</span></span>
+        <i class="i marca">check_box</i>
+      </div>
+      <div class="fila borde-suave seleccionada" data-marcar>
+        <span class="fila__icono"><i class="i">medication</i></span>
+        <span class="fila__textos"><span class="fila__titulo">Medicación vigente</span></span>
+        <i class="i marca">check_box</i>
+      </div>
+      <div class="fila borde-suave" data-marcar>
+        <span class="fila__icono"><i class="i">stethoscope</i></span>
+        <span class="fila__textos"><span class="fila__titulo">Consultas</span></span>
+        <i class="i marca">check_box_outline_blank</i>
+      </div>
+      <div class="fila borde-suave" data-marcar>
+        <span class="fila__icono"><i class="i">labs</i></span>
+        <span class="fila__textos"><span class="fila__titulo">Exámenes</span></span>
+        <i class="i marca">check_box_outline_blank</i>
+      </div>
+    </div>
+    <div class="campos">
+      <label class="campo"><span class="campo__etiqueta">Desde</span><span class="campo__caja"><input inputmode="numeric" value="23/09/2025"></span></label>
+      <label class="campo"><span class="campo__etiqueta">Hasta</span><span class="campo__caja"><input inputmode="numeric" value="23/09/2026"></span></label>
+    </div>
+  </div>
+  <div class="barra-accion">
+    <a class="boton texto-f9" href="l2-vista-previa-del-pdf.html">Ver vista previa<i class="i">arrow_forward</i></a>
+  </div>
+  <div class="barra-estado"><span class="hora">9:41</span><span class="indicadores"><i class="i">signal_cellular_alt</i><i class="i">wifi</i><i class="i">battery_full</i></span></div>
+</main>
+</div></div>
+<script src="../js/app.js"></script>
+</body>
+</html>

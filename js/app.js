@@ -173,6 +173,16 @@
       return;
     }
 
+    /* Copiar un texto al portapapeles y avisarlo en el subtítulo */
+    el = e.target.closest("[data-copiar]");
+    if (el) {
+      var texto = el.getAttribute("data-copiar");
+      var aviso = el.querySelector(".fila__sub");
+      if (navigator.clipboard) navigator.clipboard.writeText(texto).catch(function () {});
+      if (aviso) { aviso.textContent = "¡Enlace copiado!"; setTimeout(function () { aviso.textContent = texto; }, 1800); }
+      return;
+    }
+
     /* Chip sugerido: al tocarlo se agrega como chip quitable */
     el = e.target.closest("[data-sugerencia]");
     if (el) { agregarChipQuitable(el.parentNode, el.getAttribute("data-sugerencia")); el.remove(); return; }
