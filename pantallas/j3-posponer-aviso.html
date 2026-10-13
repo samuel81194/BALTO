@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>J3 · Posponer aviso · Balto</title>
+<link rel="stylesheet" href="../css/balto.css">
+</head>
+<body>
+<div class="escenario"><div class="dispositivo">
+<main class="pantalla">
+  <div class="contenido">
+    <div class="encabezado">
+      <span class="boton-icono"><i class="i">arrow_back</i></span>
+      <h1 class="encabezado__titulo">Alerta</h1>
+      <span class="espacio"></span>
+    </div>
+    <div class="destacada oscura">
+      <div class="destacada__fila">
+        <span class="evento__icono" style="background: var(--primario-800); color: var(--neutro-900);"><i class="i">vaccines</i></span>
+        <span><span class="t-t2">Refuerzo antirrábica</span><span class="t-pequeno tenue">Luna · vence el 25 sep</span></span>
+      </div>
+    </div>
+  </div>
+  <a class="velo claro" href="j2-detalle-de-alerta.html" data-volver aria-label="Cerrar"></a>
+  <div class="hoja" role="dialog" aria-label="Posponer aviso" style="top: 446px; bottom: auto;">
+    <div class="hoja__asa"></div>
+    <p class="t-t2 c-900">Posponer aviso</p>
+    <div class="lista" data-radio>
+      <div class="fila borde seleccionada">
+        <span class="fila__icono"><i class="i">schedule</i></span>
+        <span class="fila__textos"><span class="fila__titulo">Mañana</span></span>
+        <i class="i radio-marca">radio_button_checked</i>
+      </div>
+      <div class="fila borde">
+        <span class="fila__icono"><i class="i">date_range</i></span>
+        <span class="fila__textos"><span class="fila__titulo">En 3 días</span></span>
+        <i class="i radio-marca">radio_button_unchecked</i>
+      </div>
+      <div class="fila borde">
+        <span class="fila__icono"><i class="i">event</i></span>
+        <span class="fila__textos"><span class="fila__titulo">Elegir fecha</span></span>
+        <i class="i radio-marca">radio_button_unchecked</i>
+      </div>
+    </div>
+    <a class="boton" href="j1-centro-de-alertas.html">Posponer</a>
+  </div>
+  <div class="barra-estado"><span class="hora">9:41</span><span class="indicadores"><i class="i">signal_cellular_alt</i><i class="i">wifi</i><i class="i">battery_full</i></span></div>
+</main>
+</div></div>
+<script src="../js/app.js"></script>
+</body>
+</html>
